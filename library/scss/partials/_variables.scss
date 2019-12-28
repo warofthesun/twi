@@ -30,18 +30,19 @@ $gray:              #eaedf2;
 $text-color:        #5c6b80;
 $meta-gray:         #9fa6b4;
 
-$primary-lt:        #333;
-$primary:           #eceee5;
-$primary-md:        #7dd667;
-$primary-dk:        #f01d4f;
-$secondary:         #2980b9;
-$accent:            #333;
+$primary:           #273b94;
+$primary-lt:        lighten($primary, 10%);
+$primary-md:        darken($primary, 10%);
+$primary-dk:        darken($primary, 20%);;
+$secondary:         #804098;
+$accent:            #ffd354;
 
 $link-color:        $secondary;
 $link-hover:        darken($link-color, 9%);
 
 $border-color:      #ccc;
 $disabled-gray:     #cfcfcf;
+
 
 
 /*

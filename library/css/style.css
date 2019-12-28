@@ -1357,7 +1357,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 .accent-btn, .comment-reply-link, #submit {
   display: inline-block;
   position: relative;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
   color: #fff;
   font-size: 0.9em;
@@ -1383,11 +1383,11 @@ You can use this example if you want. Just replace all the variables
 and it will create a button dependant on those variables.
 */
 .accent-btn, .comment-reply-link, #submit {
-  background-color: #333; }
+  background-color: #ffd354; }
   .accent-btn:hover, .comment-reply-link:hover, #submit:hover, .accent-btn:focus, .comment-reply-link:focus, #submit:focus {
-    background-color: #292929; }
+    background-color: #ffce40; }
   .accent-btn:active, .comment-reply-link:active, #submit:active {
-    background-color: #262626; }
+    background-color: #ffcc3b; }
 
 /******************************************************************
 Site Name:
@@ -1440,7 +1440,7 @@ textarea,
   border: 0;
   width: 100%;
   max-width: 400px;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #f7f8fa;
   -webkit-transition: background-color 0.24s ease-in-out;
   transition: background-color 0.24s ease-in-out; }
@@ -1662,6 +1662,9 @@ textarea,
     .field.is-disabled:active {
       background-color: #d5edf8; }
 
+input[type="search"] {
+  border-radius: 2em; }
+
 input[type="password"] {
   letter-spacing: 0.3em; }
 
@@ -1686,7 +1689,7 @@ BASE (MOBILE) SIZE
 GENERAL STYLES
 *********************/
 body {
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5;
   color: #5c6b80;
@@ -1765,12 +1768,12 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 a, a:visited {
-  color: #2980b9;
+  color: #804098;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #216693; }
+    color: #653278; }
   a:link, a:visited:link {
     /*
 		this highlights links on iPhones/iPads.
@@ -1785,11 +1788,7 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
   font-weight: 500;
-  /*
-	if you're going to use webfonts, be sure to check your weights
-	http://css-tricks.com/watch-your-font-weight/
-	*/
-  /* removing text decoration from all headline links */ }
+  text-transform: lowercase; }
   h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
     text-decoration: none; }
 
@@ -1851,6 +1850,13 @@ and more scalable.
       -webkit-transform: rotate(180deg);
               transform: rotate(180deg); }
 
+.header-nav {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .header-nav__search {
+    width: 250px; }
+
 .nav {
   border-bottom: 0;
   margin: 0;
@@ -1866,6 +1872,8 @@ and more scalable.
   height: 0;
   -webkit-transition: all .5s;
   transition: all .5s;
+  text-transform: lowercase;
+  font-weight: 500;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */ }
@@ -1887,7 +1895,7 @@ and more scalable.
 		*/ }
     .nav li a {
       display: block;
-      color: #fff;
+      color: #1c2b6c;
       text-decoration: none;
       padding: 0.75em; }
     .nav li ul.sub-menu li a,
@@ -1895,6 +1903,27 @@ and more scalable.
       padding-left: 30px; }
 
 /* end .nav */
+.searchform {
+  position: relative; }
+  .searchform::after {
+    display: table;
+    content: "";
+    clear: both; }
+  .searchform div {
+    position: relative; }
+  .searchform input[type="search"] {
+    position: absolute; }
+
+#searchsubmit {
+  border: 0;
+  background-color: transparent;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  float: right;
+  margin-right: -20px;
+  color: #273b94; }
+
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -1979,7 +2008,7 @@ article .hero--image img {
   .entry-content blockquote {
     margin: 0 0 1.5em 0.75em;
     padding: 0 0 0 0.75em;
-    border-left: 3px solid #333;
+    border-left: 3px solid #ffd354;
     font-style: italic;
     color: #9fa6b4; }
   .entry-content dd {
@@ -2094,9 +2123,9 @@ PAGE NAVI STYLES
     padding: 0.75em;
     min-width: 1em;
     display: block;
-    color: #333; }
+    color: #ffd354; }
     .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus {
-      background-color: #333;
+      background-color: #ffd354;
       color: #fff; }
   .pagination .current {
     cursor: default;

@@ -8,9 +8,80 @@ body {}
 LAYOUT & GRID STYLES
 *********************/
 
+.col-sm-0 {
+	display: none;
+}
+
 .wrap {
 	width: 760px;
 }
+
+.homepage__hero-text {
+	width: 50%;
+}
+
+.homepage__speaking_headshot {
+	margin-left: -3em;
+}
+
+.homepage {
+	&__hero-text {
+		margin-top: 8vh;
+		font-size: 3.5em;
+	}
+}
+
+.header {
+	min-height: 580px;
+}
+
+.header-nav__nav {
+	width: auto;
+
+	nav {
+		width: auto;
+	}
+}
+
+.homepage__services .services__container .service {
+			padding-bottom: 30%;
+}
+
+.logo {
+	img {
+		width: 90%;
+		height: auto;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	&-full {
+		&__hero {
+			max-width: 400px;
+		}
+	}
+}
+
+.social {
+	font-size: 2em;
+	display: inline-block;
+
+	a {
+		text-decoration: none;
+		margin-right: .2em;
+		color: $primary;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__group {
+		&_right {
+			text-align: right;
+		}
+	}
+}
+
 
 /*********************
 HEADER STYLES
@@ -43,8 +114,8 @@ NAVIGATION STYLES
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
-				color: $white;
-				text-decoration: underline;
+				color: $secondary;
+				text-decoration: none;
 			}
 		}
 
@@ -122,6 +193,10 @@ NAVIGATION STYLES
 	}  /* end current highlighters */
 
 } /* end .nav */
+
+.header-nav__search {
+	display: inline-block;
+}
 
 /*********************
 SIDEBARS & ASIDES

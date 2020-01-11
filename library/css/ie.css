@@ -211,8 +211,53 @@ GENERAL STYLES
 /*********************
 LAYOUT & GRID STYLES
 *********************/
+.col-sm-0 {
+  display: none; }
+
 .wrap {
   width: 760px; }
+
+.homepage__hero-text {
+  width: 50%; }
+
+.homepage__speaking_headshot {
+  margin-left: -3em; }
+
+.homepage__hero-text {
+  margin-top: 8vh;
+  font-size: 3.5em; }
+
+.header {
+  min-height: 580px; }
+
+.header-nav__nav {
+  width: auto; }
+  .header-nav__nav nav {
+    width: auto; }
+
+.homepage__services .services__container .service {
+  padding-bottom: 30%; }
+
+.logo img {
+  width: 90%;
+  height: auto;
+  margin-top: 0;
+  margin-bottom: 0; }
+
+.logo-full__hero {
+  max-width: 400px; }
+
+.social {
+  font-size: 2em;
+  display: inline-block; }
+  .social a {
+    text-decoration: none;
+    margin-right: .2em;
+    color: #273b94; }
+    .social a:last-child {
+      margin-right: 0; }
+  .social__group_right {
+    text-align: right; }
 
 /*********************
 HEADER STYLES
@@ -240,8 +285,8 @@ NAVIGATION STYLES
 			has the possibility of being a mobile device.
 			*/ }
       .nav li a:hover, .nav li a:focus {
-        color: #fff;
-        text-decoration: underline; }
+        color: #804098;
+        text-decoration: none; }
     .nav li ul.sub-menu,
     .nav li ul.children {
       margin-top: 0;
@@ -277,6 +322,9 @@ NAVIGATION STYLES
       visibility: visible; }
 
 /* end .nav */
+.header-nav__search {
+  display: inline-block; }
+
 /*********************
 SIDEBARS & ASIDES
 *********************/

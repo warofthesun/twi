@@ -7,7 +7,7 @@
 
 						<main id="main" class="col-xs-12" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 							<section class="wrap">
-								<div class="about-twi">
+								<div id="about-twi" class="about-twi">
 									<?php if (have_rows('about_twi')) : while (have_rows('about_twi')) : the_row(); ?>
 										<h2 class="about-twi__header"><?php the_sub_field('about_header'); ?></h2>
 										<div class="about-twi__content">
@@ -114,7 +114,7 @@
 									$width = $image['sizes'][ $size . '-width' ];
 									$height = $image['sizes'][ $size . '-height' ];
 									?>
-									<div class="col-sm-4 service" style="background-image:url('<?php echo $thumb; ?>');">
+									<div class="col-xs-12 col-sm-4 service" style="background-image:url('<?php echo $thumb; ?>');">
 										<?php $link = get_sub_field('link');
 											if( $link ):
 												$link_url = $link['url'];
@@ -157,7 +157,7 @@
 						<?php if(have_rows('homepage_contact') ) : ?>
 						<section id="contact" class="homepage__contact wrap row">
 							<?php while(have_rows('homepage_contact')) : the_row(); ?>
-								<div class="col-xs-6 contact_content">
+								<div class="col-xs-12 col-sm-6 contact_content">
 									<span>
 									<h1 class="title"><?php the_sub_field('contact_header'); ?></h1>
 									<?php the_sub_field('contact_content'); ?>
@@ -184,7 +184,8 @@
 									</div>
 									</span>
 								</div>
-								<div class="col-xs-6">
+								<div class="col-xs-2 col-sm-0"></div>
+								<div class="col-cs-10 col-sm-6">
 									<?php
 										$contact = get_sub_field('contact_form');
 

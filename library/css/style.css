@@ -1699,6 +1699,9 @@ BASE (MOBILE) SIZE
 /*********************
 GENERAL STYLES
 *********************/
+.tribe-events-back {
+  display: none; }
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
@@ -1735,15 +1738,7 @@ img {
     border-bottom: 0px; }
 
 .social {
-  font-size: 2em; }
-  .social a {
-    text-decoration: none;
-    margin-right: .2em;
-    color: #273b94; }
-    .social a:last-child {
-      margin-right: 0; }
-  .social__group_right {
-    text-align: right; }
+  display: none; }
 
 .overlay {
   background-color: rgba(39, 59, 148, 0.2);
@@ -1751,11 +1746,10 @@ img {
   height: 100%; }
 
 .homepage__hero-text {
-  margin-top: 8vh;
-  font-size: 3.5em;
+  font-size: 3em;
   color: #fff;
   line-height: 1.2;
-  max-width: 50%;
+  max-width: 100%;
   text-shadow: 0px 0px 5px rgba(128, 64, 152, 0.5), 0px 0px 20px rgba(18, 27, 67, 0.3); }
 
 .homepage__speaking {
@@ -1777,7 +1771,6 @@ img {
   .homepage__speaking_header {
     color: #273b94; }
   .homepage__speaking_headshot {
-    margin-left: -3em;
     margin-top: -3em;
     margin-bottom: 3em;
     width: 100%;
@@ -1820,7 +1813,7 @@ img {
     margin-bottom: 3em; }
     .homepage__services .services__container .service {
       background-size: cover;
-      padding-bottom: 30%;
+      padding-bottom: 70%;
       border: 0.5em solid #edf0ff;
       position: relative;
       margin-bottom: 4em; }
@@ -2057,7 +2050,8 @@ HEADER STYLES
 *********************/
 .header {
   background-color: #804098;
-  height: 80vh; }
+  height: 80vh;
+  min-height: 500px; }
 
 #logo {
   margin: 0.75em 0; }
@@ -2065,8 +2059,10 @@ HEADER STYLES
     color: #fff; }
 
 .logo img {
-  width: 100%;
-  height: auto; }
+  width: 60%;
+  height: auto;
+  margin-top: 2em;
+  margin-bottom: 2em; }
 
 .logo-full__hero {
   max-width: 400px; }
@@ -2084,10 +2080,9 @@ and more scalable.
 */
 #mobile-nav {
   text-align: center;
-  margin-bottom: 1em;
-  margin-top: -2em;
   -webkit-transition: all .5s;
-  transition: all .5s; }
+  transition: all .5s;
+  padding: 1em; }
   #mobile-nav.show {
     margin-top: 0em;
     padding: .5em;
@@ -2104,9 +2099,13 @@ and more scalable.
     display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center; }
+            align-items: center;
+    width: 100%; }
+    .header-nav__nav nav {
+      width: 100%; }
   .header-nav__search {
-    width: 250px; }
+    width: 250px;
+    display: none; }
   .header-nav__container {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -2671,8 +2670,43 @@ GENERAL STYLES
   /*********************
 LAYOUT & GRID STYLES
 *********************/
+  .col-sm-0 {
+    display: none; }
   .wrap {
     width: 760px; }
+  .homepage__hero-text {
+    width: 50%; }
+  .homepage__speaking_headshot {
+    margin-left: -3em; }
+  .homepage__hero-text {
+    margin-top: 8vh;
+    font-size: 3.5em; }
+  .header {
+    min-height: 580px; }
+  .header-nav__nav {
+    width: auto; }
+    .header-nav__nav nav {
+      width: auto; }
+  .homepage__services .services__container .service {
+    padding-bottom: 30%; }
+  .logo img {
+    width: 90%;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 0; }
+  .logo-full__hero {
+    max-width: 400px; }
+  .social {
+    font-size: 2em;
+    display: inline-block; }
+    .social a {
+      text-decoration: none;
+      margin-right: .2em;
+      color: #273b94; }
+      .social a:last-child {
+        margin-right: 0; }
+    .social__group_right {
+      text-align: right; }
   /*********************
 HEADER STYLES
 *********************/
@@ -2699,8 +2733,8 @@ NAVIGATION STYLES
 			has the possibility of being a mobile device.
 			*/ }
         .nav li a:hover, .nav li a:focus {
-          color: #fff;
-          text-decoration: underline; }
+          color: #804098;
+          text-decoration: none; }
       .nav li ul.sub-menu,
       .nav li ul.children {
         margin-top: 0;
@@ -2735,6 +2769,8 @@ NAVIGATION STYLES
         top: auto;
         visibility: visible; }
   /* end .nav */
+  .header-nav__search {
+    display: inline-block; }
   /*********************
 SIDEBARS & ASIDES
 *********************/

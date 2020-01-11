@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- header blog -->
 <?php include 'head.php'; ?>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
@@ -46,17 +47,10 @@
 							)); ?>
 						</nav>
 					</div>
+					<span class="search_and_social">
 					<div class="header-nav__search">
 						<?php include "searchform.php"; ?>
 					</div>
-				</div>
-			</div>
-			<div id="mobile-nav">
-				Menu <i class="fas fa-chevron-down"></i>
-			</div>
-			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader" style="background: url('<?php $image = get_field('header_image'); echo $image; ?>') no-repeat; background-size:cover; ">
-				<?php the_field('page_title'); ?>
-				<div id="inner-header" class="wrap row">
 					<div class="social social__group social__group_right">
 						<?php
 							// check if the repeater field has rows of data
@@ -78,11 +72,49 @@
 
 						 <?php  endwhile; else : endif; ?>
 					</div>
-					<div class="homepage homepage__hero-text">
-						<?php the_field('homepage_header_text'); ?>
+					</span>
+				</div>
+			</div>
+			<div id="mobile-nav">
+				Menu <i class="fas fa-chevron-down"></i>
+			</div>
+			<?php if (is_single()) {} else { ?>
+			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader" style="background: url('<?php the_field('post_header_image', 'option'); ?>') no-repeat; background-size:cover; ">
+				<div class="overlay">
+					<div id="inner-header" class="wrap row">
+
+					<div class="innerpage">
+						<h1 class="innerpage__hero-text">
+							<?php if( have_rows('secondary_site_logos', 'option') ): ?>
+								<?php while( have_rows('secondary_site_logos', 'option') ): the_row();
+
+										// Get sub field values.
+										$image = get_sub_field('secondary_logo_bug');
+
+										// vars
+										$url = $image['url'];
+										$title = $image['title'];
+										$alt = $image['alt'];
+										$caption = $image['caption'];
+
+										// thumbnail
+										$size = 'medium';
+										$thumb = $image['sizes'][ $size ];
+										$width = $image['sizes'][ $size . '-width' ];
+										$height = $image['sizes'][ $size . '-height' ]; ?>
+
+										<a href="<?php echo home_url(); ?>" rel="nofollow">
+											<img class="logo_bug" src="<?php echo $thumb; ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>"/>
+										</a>
+								<?php endwhile; ?>
+						<?php endif; ?>
+							<p>
+								<?php the_field('post_page_title', 'option'); ?>
+							</p>
+						</h1>
 					</div>
 
 				</div>
-
-
+				</div>
 			</header>
+			<?php } ?>

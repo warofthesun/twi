@@ -1706,7 +1706,8 @@ body {
   color: #5c6b80;
   background-color: #edf0ff;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; }
 
 img {
   image-rendering: auto; }
@@ -1743,6 +1744,11 @@ img {
       margin-right: 0; }
   .social__group_right {
     text-align: right; }
+
+.overlay {
+  background-color: rgba(39, 59, 148, 0.2);
+  width: 100%;
+  height: 100%; }
 
 .homepage__hero-text {
   margin-top: 8vh;
@@ -1788,6 +1794,22 @@ img {
 .homepage__upcoming-event {
   background-color: rgba(18, 27, 67, 0.05);
   padding: 2em 0; }
+  .homepage__upcoming-event .title {
+    margin-bottom: 0;
+    margin-top: 0; }
+    .homepage__upcoming-event .title a {
+      color: #5c6b80;
+      margin-bottom: 0;
+      margin-top: 0; }
+  .homepage__upcoming-event .event-details {
+    margin-top: 0;
+    color: #273b94; }
+    .homepage__upcoming-event .event-details:after {
+      content: "";
+      display: block;
+      margin-top: 1em;
+      border-bottom: 1px solid #273b94;
+      max-width: 400px; }
   .homepage__upcoming-event .featured_image .tribe-events-event-image img {
     width: 100%;
     height: auto; }
@@ -1872,6 +1894,41 @@ img {
       max-width: 300px; }
     .homepage__contact .contact_content .title {
       color: #273b94; }
+
+.innerpage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%; }
+  .innerpage__hero-text {
+    display: inline-block;
+    background: rgba(39, 59, 148, 0.8);
+    padding: 1em;
+    border-radius: 6px;
+    width: 100%;
+    margin-left: -70%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .innerpage__hero-text .logo_bug {
+      width: 80px;
+      height: auto;
+      margin-right: 1em; }
+    .innerpage__hero-text p {
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      line-height: 1;
+      font-size: 1.1em; }
 
 .header__divider {
   overflow: hidden;
@@ -2041,6 +2098,13 @@ and more scalable.
 
 .header-nav {
   background-color: #fff; }
+  .header-nav__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
   .header-nav__search {
     width: 250px; }
   .header-nav__container {
@@ -2050,6 +2114,9 @@ and more scalable.
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
+  .header-nav .logo_bug {
+    max-width: 40px;
+    height: auto; }
 
 .nav {
   border-bottom: 0;
@@ -2121,6 +2188,17 @@ and more scalable.
   float: right;
   margin-right: -20px;
   color: #273b94; }
+
+.search_and_social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .search_and_social .header-nav__search {
+    width: 150px;
+    margin-right: 3em; }
 
 /*********************
 POSTS & CONTENT STYLES

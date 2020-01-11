@@ -1,5 +1,5 @@
 <!--front page-->
-<?php get_header(); ?>
+<?php get_header('front'); ?>
 
 			<div id="content">
 
@@ -81,11 +81,12 @@
 									<div class="col-xs-0 col-sm-4 featured_image">
 										<?php echo tribe_event_featured_image( $event_id, 'square', true ); ?>
 									</div>
-									<div class="col-xs-12 col-sm-8">
-										<?php the_title( '<h1 class="the-title">', '</h1>' ) ;?>
-										<?php echo tribe_events_event_schedule_details( $event_id, '<h2>', '</h2>' ); ?>
-										<h2><?php echo tribe_get_venue(); ?></h2>
-										<div class="main-summary"><?php the_content() ?></div>
+									<div class="col-sm-1"></div>
+									<div class="col-xs-12 col-sm-7">
+										<h1 class="title"><a href="<?php the_permalink(); ?>"><?php echo tribe_get_venue(); ?></a></h1>
+										<?php echo tribe_events_event_schedule_details( $event_id, '<h4 class="event-details">', '</h4>' ); ?>
+										<div class="main-summary"><?php the_excerpt() ?></div>
+										<a href="<?php the_permalink(); ?>" class="secondary-btn">View Event</a>
 									</div>
 									<?php endwhile; ?>
 								</div>

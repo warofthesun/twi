@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- header front-->
 <?php include 'head.php'; ?>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
@@ -7,29 +8,6 @@
 			<div class="header-nav">
 				<div class="header-nav__container wrap row">
 					<div class="header-nav__nav">
-						<?php if( have_rows('primary_site_logos', 'option') ): ?>
-							<?php while( have_rows('primary_site_logos', 'option') ): the_row();
-
-									// Get sub field values.
-									$image = get_sub_field('primary_logo_bug');
-
-									// vars
-									$url = $image['url'];
-									$title = $image['title'];
-									$alt = $image['alt'];
-									$caption = $image['caption'];
-
-									// thumbnail
-									$size = 'medium';
-									$thumb = $image['sizes'][ $size ];
-									$width = $image['sizes'][ $size . '-width' ];
-									$height = $image['sizes'][ $size . '-height' ]; ?>
-
-									<a href="<?php echo home_url(); ?>" rel="nofollow">
-										<img class="logo_bug" src="<?php echo $thumb; ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>"/>
-									</a>
-							<?php endwhile; ?>
-					<?php endif; ?>
 						<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 							<?php wp_nav_menu(array(
 												 'container' => false,                           // remove nav container
@@ -54,8 +32,8 @@
 			<div id="mobile-nav">
 				Menu <i class="fas fa-chevron-down"></i>
 			</div>
-			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader" style="background: url('<?php $image = get_field('header_image'); echo $image; ?>') no-repeat; background-size:cover; ">
-				<?php the_field('page_title'); ?>
+			<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
+			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader" style="background: url('<?php echo $backgroundImg[0];?>') no-repeat; background-size:cover; ">
 				<div id="inner-header" class="wrap row">
 					<div class="social social__group social__group_right">
 						<?php
@@ -77,6 +55,33 @@
 							</a>
 
 						 <?php  endwhile; else : endif; ?>
+					</div>
+					<div class="logo logo-full__hero">
+
+								<?php if( have_rows('primary_site_logos', 'option') ): ?>
+							    <?php while( have_rows('primary_site_logos', 'option') ): the_row();
+
+							        // Get sub field values.
+							        $image = get_sub_field('primary_logo');
+
+											// vars
+											$url = $image['url'];
+											$title = $image['title'];
+											$alt = $image['alt'];
+											$caption = $image['caption'];
+
+											// thumbnail
+											$size = 'large';
+											$thumb = $image['sizes'][ $size ];
+											$width = $image['sizes'][ $size . '-width' ];
+											$height = $image['sizes'][ $size . '-height' ]; ?>
+
+
+					            <img src="<?php echo $thumb; ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>"/>
+
+							    <?php endwhile; ?>
+							<?php endif; ?>
+
 					</div>
 					<div class="homepage homepage__hero-text">
 						<?php the_field('homepage_header_text'); ?>

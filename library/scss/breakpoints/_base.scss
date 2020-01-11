@@ -7,7 +7,7 @@ body {
 	font-size: 100%;
 	line-height: 1.5;
 	color: $text-color;
-	background-color: $gray;
+	background-color: $background;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
 }
@@ -18,6 +18,8 @@ img {
 
 #inner-header, #inner-footer {
 	flex-direction: column;
+	justify-content: flex-start;
+	height: 100%;
 }
 
 #inner-footer {
@@ -33,6 +35,207 @@ img {
 	}
 }
 
+.social {
+	color: $primary-md;
+	font-size: 2em;
+
+	a {
+		text-decoration: none;
+		margin-right: .2em;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__group {
+		&_right {
+			text-align: right;
+		}
+	}
+}
+
+
+.homepage {
+	&__hero-text {
+		margin-top: 8vh;
+		font-size: 3.5em;
+		color: $white;
+		line-height: 1.2;
+		max-width: 50%;
+		text-shadow: 0px 0px 5px rgba($secondary, 0.5), 0px 0px 20px rgba($primary-dk, 0.3);
+	}
+
+	&__speaking {
+		display: block;
+		background-color: $white;
+		margin-top: 6em;
+		border-bottom: 5px solid $secondary;
+
+		&_container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		&_header {
+			font-weight: normal;
+			color: $primary;
+		}
+
+		&_headshot {
+			margin-left: -3em;
+			margin-top: -3em;
+			margin-bottom: 3em;
+			width: 100%;
+			height: auto;
+		}
+
+		&_cta {
+			margin-top: 2em;
+			margin-bottom: 2em;
+			li {
+				display: inline-block;
+				margin-right: 1em;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	&__upcoming-event {
+		background-color: rgba($primary-dk, .05);
+		padding: 2em 0;
+
+		.featured_image {
+			.tribe-events-event-image {
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+	}
+
+	&__services {
+		border-bottom: 2px solid $secondary;
+
+		.services {
+			&__container {
+				margin-bottom: 3em;
+
+				.service {
+					background-size: cover;
+					padding-bottom: 30%;
+					border: .5em solid $background;
+					position: relative;
+					margin-bottom: 4em;
+
+					.service_content {
+						background-color: rgba($primary, 0.0);
+						height: 100%;
+						width: 100%;
+						display: flex;
+						justify-content: center;
+						align-items: flex-end;
+						position: absolute;
+						margin-left: 0;
+						left: 0;
+						color: $white;
+						transition: all .3s;
+
+						&:hover {
+							background-color: rgba($primary, 0.5);
+						}
+
+						.button {
+							display: block;
+							min-width: 130px;
+							background-color: $primary;
+							text-align: center;
+							border-radius: 20px;
+							padding: .3em;
+							margin-bottom: 2em;
+						}
+					}
+
+					.service_title {
+						width: 100%;
+						text-align: center;
+						bottom: -50px;
+						position: absolute;
+						color: $primary;
+						text-transform: lowercase;
+						font-weight: 500;
+						font-size: 1.4em;
+					}
+				}
+			}
+		}
+	}
+
+	&__latest-news {
+		background: $white;
+		padding: 3em 0;
+
+		.featured_image {
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		.excerpt-read-more {
+			display: none;
+		}
+
+		.title {
+			font-weight: 400;
+			color: $secondary;
+		}
+	}
+}
+
+.header {
+	&__divider {
+		overflow: hidden;
+		text-align: center;
+		font-weight: 200;
+		letter-spacing: 1px;
+
+		&_primary {
+			color: $primary;
+		}
+
+		&_secondary {
+			color: $secondary;
+		}
+
+		> span {
+			position: relative;
+    	display: inline-block;
+
+			&:before, &:after {
+				content: '';
+		    position: absolute;
+		    top: 57%;
+		    border-bottom: 1px solid;
+		    width: 200%; /* half of limiter*/
+		    margin: 0 20px;
+			}
+
+			&:before {
+				right: 100%;
+			}
+
+			&:after {
+				left: 100%;
+			}
+		}
+	}
+}
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -127,6 +330,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 h1, .h1 {
 	font-size: 2.5em;
 	line-height: 1.333em;
+	font-weight: normal;
 }
 
 h2, .h2 {
@@ -156,16 +360,29 @@ HEADER STYLES
 *********************/
 
 .header {
-	background-color: $black;
+	background-color: $secondary;
+	height: 80vh;
 }
 
-	#logo {
-		margin: 0.75em 0;
+#logo {
+	margin: 0.75em 0;
 
-		a {
-			color: $white;
+	a {
+		color: $white;
+	}
+}
+
+.logo {
+	img {
+		width: 100%;
+		height: auto;
+	}
+	&-full {
+		&__hero {
+			max-width: 400px;
 		}
 	}
+}
 
 /*********************
 NAVIGATION STYLES
@@ -198,10 +415,15 @@ and more scalable.
 }
 
 .header-nav {
-	justify-content: space-between;
+	background-color: $white;
 
 	&__search {
 		width: 250px;
+	}
+
+	&__container {
+		justify-content: space-between;
+		align-items: center;
 	}
 }
 
@@ -297,6 +519,10 @@ and more scalable.
 
 	input[type="search"] {
 		position: absolute;
+		height: 30px;
+		background-color: $background;
+		padding-bottom: 0;
+		margin-bottom: 0;
 	}
 }
 
@@ -304,8 +530,8 @@ and more scalable.
 	border: 0;
 	background-color: transparent;
 	position: relative;
-	width: 40px;
-	height: 40px;
+	width: 30px;
+	height: 30px;
 	float: right;
 	margin-right: -20px;
 	color: $primary;
@@ -317,6 +543,24 @@ POSTS & CONTENT STYLES
 
 #content {
 	margin-top: 1.5em;
+}
+
+.about-twi {
+	background-color: rgba($white, 0.6);
+	margin-top: -8em;
+	max-width: 700px;
+	width: 100%;
+
+	&__header {
+		border-top: 10px solid $primary;
+		color: $primary;
+		padding: 20px 40px;
+		font-weight: normal;
+	}
+
+	&__content {
+		padding: 0 40px 20px;
+	}
 }
 
 article {
@@ -334,7 +578,6 @@ article {
 			background-color: $white;
 			border-radius: 3px;
 			margin-bottom: 1.5em;
-			border: 1px solid $border-color;
 
 			header {
 				border-bottom: 1px solid $light-gray;

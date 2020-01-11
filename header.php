@@ -48,8 +48,8 @@
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
 		<div id="container">
-			<div class="header-nav__container">
-				<div class="header-nav wrap row">
+			<div class="header-nav">
+				<div class="header-nav__container wrap row">
 					<div class="header-nav__nav">
 						<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 							<?php wp_nav_menu(array(
@@ -75,17 +75,62 @@
 			<div id="mobile-nav">
 				Menu <i class="fas fa-chevron-down"></i>
 			</div>
-			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+			<?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
+			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader" style="background: url('<?php echo $backgroundImg[0];?>') no-repeat; background-size:cover; ">
+				<div id="inner-header" class="wrap row">
+					<div class="social social__group social__group_right">
+						<?php
+							// check if the repeater field has rows of data
+							if( have_rows('social_platforms', 'option') ):
+
+							// loop through the rows of data
+								while ( have_rows('social_platforms', 'option') ) : the_row();
 
 
-				<div id="inner-header" class="wrap  row">
+								$link = get_sub_field('social_platform_link');
+								$link_url = $link['url'];
+								$link_title = $link['title'];
+								$link_target = $link['target'] ? $link['target'] : '_self';
+						?>
 
-					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
+							<a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target );?>" title="<?php echo esc_html( $link_title ); ?>">
+								<?php the_sub_field('social_platform_icon'); ?>
+							</a>
 
-					<p id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
+						 <?php  endwhile; else : endif; ?>
+					</div>
+					<div class="logo logo-full__hero">
 
-					<?php // if you'd like to use the site description you can un-comment it below ?>
-					<?php // bloginfo('description'); ?>
+								<?php if( have_rows('primary_site_logos', 'option') ): ?>
+							    <?php while( have_rows('primary_site_logos', 'option') ): the_row();
+
+							        // Get sub field values.
+							        $image = get_sub_field('primary_logo');
+
+											// vars
+											$url = $image['url'];
+											$title = $image['title'];
+											$alt = $image['alt'];
+											$caption = $image['caption'];
+
+											// thumbnail
+											$size = 'large';
+											$thumb = $image['sizes'][ $size ];
+											$width = $image['sizes'][ $size . '-width' ];
+											$height = $image['sizes'][ $size . '-height' ]; ?>
+
+
+					            <img src="<?php echo $thumb; ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>"/>
+
+							    <?php endwhile; ?>
+							<?php endif; ?>
+
+					</div>
+					<div class="homepage homepage__hero-text">
+						<?php the_field('homepage_header_text'); ?>
+					</div>
+
 				</div>
+
 
 			</header>

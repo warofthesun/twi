@@ -1354,40 +1354,49 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.accent-btn, .comment-reply-link, #submit {
+.accent-btn, .comment-reply-link, #submit, .primary-btn, .secondary-btn {
   display: inline-block;
   position: relative;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
   color: #fff;
-  font-size: 0.9em;
-  font-size: 34px;
-  line-height: 34px;
+  font-size: 1em;
   font-weight: normal;
-  padding: 0 24px;
+  padding: .5em 1em;
   border-radius: 4px;
   border: 0;
+  min-width: 200px;
+  text-align: center;
   cursor: pointer;
   -webkit-transition: background-color 0.14s ease-in-out;
   transition: background-color 0.14s ease-in-out; }
-  .accent-btn:hover, .comment-reply-link:hover, #submit:hover, .accent-btn:focus, .comment-reply-link:focus, #submit:focus {
+  .accent-btn:hover, .comment-reply-link:hover, #submit:hover, .primary-btn:hover, .secondary-btn:hover, .accent-btn:focus, .comment-reply-link:focus, #submit:focus, .primary-btn:focus, .secondary-btn:focus, .accent-btn:visited, .comment-reply-link:visited, #submit:visited, .primary-btn:visited, .secondary-btn:visited {
     color: #fff;
     text-decoration: none;
     outline: none; }
-  .accent-btn:active, .comment-reply-link:active, #submit:active {
+  .accent-btn:active, .comment-reply-link:active, #submit:active, .primary-btn:active, .secondary-btn:active {
     top: 1px; }
 
-/*
-An example button.
-You can use this example if you want. Just replace all the variables
-and it will create a button dependant on those variables.
-*/
 .accent-btn, .comment-reply-link, #submit {
   background-color: #ffd354; }
   .accent-btn:hover, .comment-reply-link:hover, #submit:hover, .accent-btn:focus, .comment-reply-link:focus, #submit:focus {
     background-color: #ffce40; }
   .accent-btn:active, .comment-reply-link:active, #submit:active {
     background-color: #ffcc3b; }
+
+.primary-btn {
+  background-color: #273b94; }
+  .primary-btn:hover, .primary-btn:focus {
+    background-color: #233584; }
+  .primary-btn:active {
+    background-color: #223380; }
+
+.secondary-btn {
+  background-color: #804098; }
+  .secondary-btn:hover, .secondary-btn:focus {
+    background-color: #743a8a; }
+  .secondary-btn:active {
+    background-color: #713886; }
 
 /******************************************************************
 Site Name:
@@ -1693,7 +1702,7 @@ body {
   font-size: 100%;
   line-height: 1.5;
   color: #5c6b80;
-  background-color: #eaedf2;
+  background-color: #edf0ff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
@@ -1704,7 +1713,11 @@ img {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: 100%; }
 
 #inner-footer .nav {
   opacity: 1;
@@ -1717,6 +1730,152 @@ img {
       flex-wrap: wrap; }
   #inner-footer .nav li {
     border-bottom: 0px; }
+
+.social {
+  color: #1c2b6c;
+  font-size: 2em; }
+  .social a {
+    text-decoration: none;
+    margin-right: .2em; }
+    .social a:last-child {
+      margin-right: 0; }
+  .social__group_right {
+    text-align: right; }
+
+.homepage__hero-text {
+  margin-top: 8vh;
+  font-size: 3.5em;
+  color: #fff;
+  line-height: 1.2;
+  max-width: 50%;
+  text-shadow: 0px 0px 5px rgba(128, 64, 152, 0.5), 0px 0px 20px rgba(18, 27, 67, 0.3); }
+
+.homepage__speaking {
+  display: block;
+  background-color: #fff;
+  margin-top: 6em;
+  border-bottom: 5px solid #804098; }
+  .homepage__speaking_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .homepage__speaking_header {
+    font-weight: normal;
+    color: #273b94; }
+  .homepage__speaking_headshot {
+    margin-left: -3em;
+    margin-top: -3em;
+    margin-bottom: 3em;
+    width: 100%;
+    height: auto; }
+  .homepage__speaking_cta {
+    margin-top: 2em;
+    margin-bottom: 2em; }
+    .homepage__speaking_cta li {
+      display: inline-block;
+      margin-right: 1em; }
+      .homepage__speaking_cta li:last-child {
+        margin-right: 0; }
+
+.homepage__upcoming-event {
+  background-color: rgba(18, 27, 67, 0.05);
+  padding: 2em 0; }
+  .homepage__upcoming-event .featured_image .tribe-events-event-image img {
+    width: 100%;
+    height: auto; }
+
+.homepage__services {
+  border-bottom: 2px solid #804098; }
+  .homepage__services .services__container {
+    margin-bottom: 3em; }
+    .homepage__services .services__container .service {
+      background-size: cover;
+      padding-bottom: 30%;
+      border: 0.5em solid #edf0ff;
+      position: relative;
+      margin-bottom: 4em; }
+      .homepage__services .services__container .service .service_content {
+        background-color: rgba(39, 59, 148, 0);
+        height: 100%;
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: end;
+            -ms-flex-align: end;
+                align-items: flex-end;
+        position: absolute;
+        margin-left: 0;
+        left: 0;
+        color: #fff;
+        -webkit-transition: all .3s;
+        transition: all .3s; }
+        .homepage__services .services__container .service .service_content:hover {
+          background-color: rgba(39, 59, 148, 0.5); }
+        .homepage__services .services__container .service .service_content .button {
+          display: block;
+          min-width: 130px;
+          background-color: #273b94;
+          text-align: center;
+          border-radius: 20px;
+          padding: .3em;
+          margin-bottom: 2em; }
+      .homepage__services .services__container .service .service_title {
+        width: 100%;
+        text-align: center;
+        bottom: -50px;
+        position: absolute;
+        color: #273b94;
+        text-transform: lowercase;
+        font-weight: 500;
+        font-size: 1.4em; }
+
+.homepage__latest-news {
+  background: #fff;
+  padding: 3em 0; }
+  .homepage__latest-news .featured_image img {
+    width: 100%;
+    height: auto; }
+  .homepage__latest-news .excerpt-read-more {
+    display: none; }
+  .homepage__latest-news .title {
+    font-weight: 400;
+    color: #804098; }
+
+.header__divider {
+  overflow: hidden;
+  text-align: center;
+  font-weight: 200;
+  letter-spacing: 1px; }
+  .header__divider_primary {
+    color: #273b94; }
+  .header__divider_secondary {
+    color: #804098; }
+  .header__divider > span {
+    position: relative;
+    display: inline-block; }
+    .header__divider > span:before, .header__divider > span:after {
+      content: '';
+      position: absolute;
+      top: 57%;
+      border-bottom: 1px solid;
+      width: 200%;
+      /* half of limiter*/
+      margin: 0 20px; }
+    .header__divider > span:before {
+      right: 100%; }
+    .header__divider > span:after {
+      left: 100%; }
 
 /********************
 WORDPRESS BODY CLASSES
@@ -1794,7 +1953,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 
 h1, .h1 {
   font-size: 2.5em;
-  line-height: 1.333em; }
+  line-height: 1.333em;
+  font-weight: normal; }
 
 h2, .h2 {
   font-size: 1.75em;
@@ -1818,12 +1978,20 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 .header {
-  background-color: #000; }
+  background-color: #804098;
+  height: 80vh; }
 
 #logo {
   margin: 0.75em 0; }
   #logo a {
     color: #fff; }
+
+.logo img {
+  width: 100%;
+  height: auto; }
+
+.logo-full__hero {
+  max-width: 400px; }
 
 /*********************
 NAVIGATION STYLES
@@ -1851,11 +2019,16 @@ and more scalable.
               transform: rotate(180deg); }
 
 .header-nav {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+  background-color: #fff; }
   .header-nav__search {
     width: 250px; }
+  .header-nav__container {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
 
 .nav {
   border-bottom: 0;
@@ -1912,14 +2085,18 @@ and more scalable.
   .searchform div {
     position: relative; }
   .searchform input[type="search"] {
-    position: absolute; }
+    position: absolute;
+    height: 30px;
+    background-color: #edf0ff;
+    padding-bottom: 0;
+    margin-bottom: 0; }
 
 #searchsubmit {
   border: 0;
   background-color: transparent;
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   float: right;
   margin-right: -20px;
   color: #273b94; }
@@ -1930,6 +2107,19 @@ POSTS & CONTENT STYLES
 #content {
   margin-top: 1.5em; }
 
+.about-twi {
+  background-color: rgba(255, 255, 255, 0.6);
+  margin-top: -8em;
+  max-width: 700px;
+  width: 100%; }
+  .about-twi__header {
+    border-top: 10px solid #273b94;
+    color: #273b94;
+    padding: 20px 40px;
+    font-weight: normal; }
+  .about-twi__content {
+    padding: 0 40px 20px; }
+
 article .hero--image img {
   width: 100%;
   height: auto; }
@@ -1937,8 +2127,7 @@ article .hero--image img {
 .hentry {
   background-color: #fff;
   border-radius: 3px;
-  margin-bottom: 1.5em;
-  border: 1px solid #ccc; }
+  margin-bottom: 1.5em; }
   .hentry header {
     border-bottom: 1px solid #f8f9fa;
     padding: 1.5em; }

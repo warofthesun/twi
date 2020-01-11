@@ -78,7 +78,7 @@
 			<div id="mobile-nav">
 				Menu <i class="fas fa-chevron-down"></i>
 			</div>
-			<?php if (is_single()) {} else { ?>
+			<?php if (is_single() || is_page()) {} else { ?>
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader" style="background: url('<?php the_field('post_header_image', 'option'); ?>') no-repeat; background-size:cover; ">
 				<div class="overlay">
 					<div id="inner-header" class="wrap row">

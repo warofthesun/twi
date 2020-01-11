@@ -1,5 +1,5 @@
 <!--page-->
-<?php get_header(); ?>
+<?php get_header('blog'); ?>
 
 			<div id="content">
 

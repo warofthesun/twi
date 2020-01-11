@@ -1354,7 +1354,7 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.accent-btn, .comment-reply-link, #submit, .primary-btn, .secondary-btn {
+.accent-btn, .comment-reply-link, #submit, .primary-btn, .secondary-btn, .wpcf7-submit {
   display: inline-block;
   position: relative;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1363,18 +1363,18 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   font-size: 1em;
   font-weight: normal;
   padding: .5em 1em;
-  border-radius: 4px;
+  border-radius: 2px;
   border: 0;
   min-width: 200px;
   text-align: center;
   cursor: pointer;
   -webkit-transition: background-color 0.14s ease-in-out;
   transition: background-color 0.14s ease-in-out; }
-  .accent-btn:hover, .comment-reply-link:hover, #submit:hover, .primary-btn:hover, .secondary-btn:hover, .accent-btn:focus, .comment-reply-link:focus, #submit:focus, .primary-btn:focus, .secondary-btn:focus, .accent-btn:visited, .comment-reply-link:visited, #submit:visited, .primary-btn:visited, .secondary-btn:visited {
+  .accent-btn:hover, .comment-reply-link:hover, #submit:hover, .primary-btn:hover, .secondary-btn:hover, .wpcf7-submit:hover, .accent-btn:focus, .comment-reply-link:focus, #submit:focus, .primary-btn:focus, .secondary-btn:focus, .wpcf7-submit:focus, .accent-btn:visited, .comment-reply-link:visited, #submit:visited, .primary-btn:visited, .secondary-btn:visited, .wpcf7-submit:visited {
     color: #fff;
     text-decoration: none;
     outline: none; }
-  .accent-btn:active, .comment-reply-link:active, #submit:active, .primary-btn:active, .secondary-btn:active {
+  .accent-btn:active, .comment-reply-link:active, #submit:active, .primary-btn:active, .secondary-btn:active, .wpcf7-submit:active {
     top: 1px; }
 
 .accent-btn, .comment-reply-link, #submit {
@@ -1387,15 +1387,17 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 .primary-btn {
   background-color: #273b94; }
   .primary-btn:hover, .primary-btn:focus {
-    background-color: #233584; }
+    background-color: #233584;
+    color: rgba(255, 255, 255, 0.8); }
   .primary-btn:active {
     background-color: #223380; }
 
-.secondary-btn {
+.secondary-btn, .wpcf7-submit {
   background-color: #804098; }
-  .secondary-btn:hover, .secondary-btn:focus {
-    background-color: #743a8a; }
-  .secondary-btn:active {
+  .secondary-btn:hover, .secondary-btn:focus, .wpcf7-submit:hover, .wpcf7-submit:focus {
+    background-color: #743a8a;
+    color: rgba(255, 255, 255, 0.8); }
+  .secondary-btn:active, .wpcf7-submit:active {
     background-color: #713886; }
 
 /******************************************************************
@@ -1732,11 +1734,11 @@ img {
     border-bottom: 0px; }
 
 .social {
-  color: #1c2b6c;
   font-size: 2em; }
   .social a {
     text-decoration: none;
-    margin-right: .2em; }
+    margin-right: .2em;
+    color: #273b94; }
     .social a:last-child {
       margin-right: 0; }
   .social__group_right {
@@ -1767,7 +1769,6 @@ img {
         -ms-flex-pack: center;
             justify-content: center; }
   .homepage__speaking_header {
-    font-weight: normal;
     color: #273b94; }
   .homepage__speaking_headshot {
     margin-left: -3em;
@@ -1849,8 +1850,28 @@ img {
   .homepage__latest-news .excerpt-read-more {
     display: none; }
   .homepage__latest-news .title {
-    font-weight: 400;
-    color: #804098; }
+    color: #273b94; }
+
+.homepage__contact {
+  padding: 3em 0; }
+  .homepage__contact .contact_content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .homepage__contact .contact_content span {
+      max-width: 300px; }
+    .homepage__contact .contact_content .title {
+      color: #273b94; }
 
 .header__divider {
   overflow: hidden;
@@ -1954,7 +1975,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 h1, .h1 {
   font-size: 2.5em;
   line-height: 1.333em;
-  font-weight: normal; }
+  font-weight: 200; }
 
 h2, .h2 {
   font-size: 1.75em;

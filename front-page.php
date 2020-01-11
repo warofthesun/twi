@@ -147,10 +147,50 @@
 								<div class="col-xs-12 col-sm-6">
 									<?php the_title( '<h1 class="title">', '</h1>' ) ;?>
 									<div class="main-summary"><?php the_excerpt() ?></div>
-									<a class="primary-btn" href="<?php the_permalink(); ?>">Read More</a>
+									<a class="secondary-btn" href="<?php the_permalink(); ?>">Read More</a>
 								</div>
 								<?php endwhile; wp_reset_postdata();?>
 							</div>
+						</section>
+						<?php endif; ?>
+						<?php if(have_rows('homepage_contact') ) : ?>
+						<section id="contact" class="homepage__contact wrap row">
+							<?php while(have_rows('homepage_contact')) : the_row(); ?>
+								<div class="col-xs-6 contact_content">
+									<span>
+									<h1 class="title"><?php the_sub_field('contact_header'); ?></h1>
+									<?php the_sub_field('contact_content'); ?>
+									<div class="social social__group social__group_left">
+										<?php
+											// check if the repeater field has rows of data
+											if( have_rows('social_platforms', 'option') ):
+
+											// loop through the rows of data
+												while ( have_rows('social_platforms', 'option') ) : the_row();
+
+
+												$link = get_sub_field('social_platform_link');
+												$link_url = $link['url'];
+												$link_title = $link['title'];
+												$link_target = $link['target'] ? $link['target'] : '_self';
+										?>
+
+											<a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target );?>" title="<?php echo esc_html( $link_title ); ?>">
+												<?php the_sub_field('social_platform_icon'); ?>
+											</a>
+
+										 <?php  endwhile; else : endif; ?>
+									</div>
+									</span>
+								</div>
+								<div class="col-xs-6">
+									<?php
+										$contact = get_sub_field('contact_form');
+
+										echo do_shortcode($contact);
+									?>
+							</div>
+							<?php endwhile; ?>
 						</section>
 						<?php endif; ?>
 						</main>

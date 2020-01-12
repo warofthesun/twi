@@ -640,19 +640,27 @@ POSTS & CONTENT STYLES
 
 .about-twi {
 	background-color: rgba($white, 0.6);
-	margin-top: -8em;
-	max-width: 700px;
-	width: 100%;
+	margin-top: -7em;
+	padding: 0;
 
 	&__header {
 		border-top: 10px solid $primary;
 		color: $primary;
 		padding: 20px 40px;
 		font-weight: normal;
+		margin-top: 0;
 	}
 
 	&__content {
 		padding: 0 40px 20px;
+	}
+}
+
+.email-signup {
+	text-align: center;
+
+	.title {
+		font-weight: 300;
 	}
 }
 

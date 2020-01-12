@@ -6,8 +6,8 @@
 				<div id="inner-content" class="row">
 
 						<main id="main" class="col-xs-12" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-							<section class="wrap">
-								<div id="about-twi" class="about-twi">
+							<section class="wrap row">
+								<div id="about-twi" class="about-twi col-xs-12 col-sm-8">
 									<?php if (have_rows('about_twi')) : while (have_rows('about_twi')) : the_row(); ?>
 										<h2 class="about-twi__header"><?php the_sub_field('about_header'); ?></h2>
 										<div class="about-twi__content">
@@ -15,6 +15,18 @@
 										</div>
 									<?php endwhile; endif; ?>
 								</div>
+								<?php if(have_rows('email_signup') ) : while(have_rows('email_signup') ) : the_row(); ?>
+									<div class="col-xs-12 col-sm-3 email-signup">
+										<?php if(get_sub_field('title') ) : ?>
+											<h2 class="title"><?php the_sub_field('title'); ?></h2>
+										<?php endif; ?>
+										<?php $link = get_sub_field('link');
+													$link_url = $link['url'];
+													$link_title = $link['title'];
+													$link_target = $link['target'] ? $link['target'] : '_self'; ?>
+										<a href="<?php echo esc_url( $link_url ); ?>" target="_blank" class="secondary-btn"><?php echo $link_title; ?></a>
+									</div>
+								<?php endwhile; endif; ?>
 							</section>
 							<section id="speaking" class="homepage__speaking">
 								<div class="wrap row">

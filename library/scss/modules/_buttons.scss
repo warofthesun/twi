@@ -74,7 +74,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   &:hover,
   &:focus {
     background-color: darken($primary, 4%);
-    color: rgba($white, 0.8);
+    color: rgba($white, 0.8) !important;
   } // end hover
 
   &:active {
@@ -90,7 +90,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   &:hover,
   &:focus {
     background-color: darken($secondary, 4%);
-    color: rgba($white, 0.8);
+    color: rgba($white, 0.8) !important;
   } // end hover
 
   &:active {

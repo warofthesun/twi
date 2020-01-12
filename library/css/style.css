@@ -1388,7 +1388,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   background-color: #273b94; }
   .primary-btn:hover, .primary-btn:focus {
     background-color: #233584;
-    color: rgba(255, 255, 255, 0.8); }
+    color: rgba(255, 255, 255, 0.8) !important; }
   .primary-btn:active {
     background-color: #223380; }
 
@@ -1396,7 +1396,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   background-color: #804098; }
   .secondary-btn:hover, .secondary-btn:focus, .wpcf7-submit:hover, .wpcf7-submit:focus {
     background-color: #743a8a;
-    color: rgba(255, 255, 255, 0.8); }
+    color: rgba(255, 255, 255, 0.8) !important; }
   .secondary-btn:active, .wpcf7-submit:active {
     background-color: #713886; }
 
@@ -2207,16 +2207,21 @@ POSTS & CONTENT STYLES
 
 .about-twi {
   background-color: rgba(255, 255, 255, 0.6);
-  margin-top: -8em;
-  max-width: 700px;
-  width: 100%; }
+  margin-top: -7em;
+  padding: 0; }
   .about-twi__header {
     border-top: 10px solid #273b94;
     color: #273b94;
     padding: 20px 40px;
-    font-weight: normal; }
+    font-weight: normal;
+    margin-top: 0; }
   .about-twi__content {
     padding: 0 40px 20px; }
+
+.email-signup {
+  text-align: center; }
+  .email-signup .title {
+    font-weight: 300; }
 
 article .hero--image img {
   width: 100%;

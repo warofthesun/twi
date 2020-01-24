@@ -2,8 +2,6 @@
 <!-- header front-->
 <?php include 'head.php'; ?>
 
-	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
-
 		<div id="container">
 			<div class="header-nav">
 				<div class="header-nav__container wrap row">

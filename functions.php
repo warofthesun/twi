@@ -1,7 +1,7 @@
 <?php
 
 // LOAD starter CORE (if you remove this, the theme will break)
-require_once( 'library/starter.php' );
+require_once( 'library/twi.php' );
 
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 // require_once( 'library/admin.php' );

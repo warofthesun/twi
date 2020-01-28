@@ -1,21 +1,49 @@
-/*********************
-NAVIGATION STYLES
-*********************/
-#mobile-nav {
-	display: none;
-}
+//Layout and Grid Styles
 
-.nav {
-	flex-direction: row;
-	height: auto;
-	opacity: 1;
-	display: flex;
-
-	li {
-		border-bottom: 0;
+.home {
+	.header {
+		height: 80vh;
+		background-position-y: top;
 	}
 }
 
+.header {
+	background-color: $secondary;
+	height: 70vh;
+	min-height: 500px;
+	background-repeat:  no-repeat;
+	background-size:cover; 
+	background-position: center;
+}
+
+.homepage__hero-text {
+	width: 50%;
+}
+
+.homepage__services .services__container .service {
+			padding-bottom: 30%;
+}
+
+.homepage__contact .contact_form span {
+	max-width: 100%;
+}
+
+.innerpage__hero-text {
+	margin-left: -50%;
+	width: 100%;
+	.logo_bug {
+		display: block;
+		width: 80px;
+		height: auto;
+		margin-right: 1em;
+	}
+}
+
+
+
+/*********************
+NAVIGATION STYLES
+*********************/
 
 	/* .menu is clearfixed inside mixins.scss */
 	.menu {
@@ -25,10 +53,6 @@ NAVIGATION STYLES
 
 				a {
 
-					/*
-					you can use hover styles here even though this size
-					has the possibility of being a mobile device.
-					*/
 					&:hover, &:focus {
 
 					}
@@ -37,9 +61,6 @@ NAVIGATION STYLES
 				&:first-child {}
 				&:last-child {}
 
-				/*
-				plan your menus and drop-downs wisely.
-				*/
 				ul.sub-menu,
 				ul.children {
 					li {
@@ -69,7 +90,6 @@ POSTS & CONTENT STYLES
 
 /* entry content */
 .entry-content {
-
 
 	/* at this larger size, we can start to align images */
 	.alignleft, img.alignleft {

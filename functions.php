@@ -11,7 +11,7 @@ LAUNCH starter
 Let's get everything up and running.
 *********************/
 
-function starter_ahoy() {
+function twi_startup() {
 
   //Allow editor style.
   add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
@@ -53,7 +53,7 @@ function starter_ahoy() {
 } /* end starter ahoy */
 
 // let's get this party started
-add_action( 'after_setup_theme', 'starter_ahoy' );
+add_action( 'after_setup_theme', 'twi_startup' );
 
 
 /************* OEMBED SIZE OPTIONS *************/
@@ -276,12 +276,6 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Theme Header Settings',
 		'menu_title'	=> 'Header',
-		'parent_slug'	=> 'theme-general-settings',
-	));
-
-  acf_add_options_sub_page(array(
-		'page_title' 	=> 'Post Page Settings',
-		'menu_title'	=> 'Posts Page',
 		'parent_slug'	=> 'theme-general-settings',
 	));
 

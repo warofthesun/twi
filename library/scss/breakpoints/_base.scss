@@ -28,6 +28,16 @@ img {
 	height: 100%;
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	#inner-header {
+		display: block;
+		
+		.social__group_right {
+			width: 100%;
+		}
+	}
+}
+
 #inner-footer {
 	.nav {
 		opacity: 1;
@@ -54,10 +64,11 @@ img {
 .homepage {
 	&__hero-text {
 		font-size: 3em;
+		margin-top: 10%;
 		color: $white;
 		line-height: 1.2;
 		max-width: 100%;
-		text-shadow: 0px 0px 5px rgba($secondary, 0.5), 0px 0px 20px rgba($primary-dk, 0.3);
+		text-shadow: 0px 0px 5px rgba($primary-dk, 0.3), 0px 0px 20px rgba($primary-dk, 0.2);
 	}
 
 	&__speaking {
@@ -228,6 +239,14 @@ img {
 				color: $primary;
 			}
 		}
+		
+		.contact_form {
+			span {
+				display: block;
+				max-width: 300px;
+				margin: 0 auto;
+			}
+		}
 	}
 }
 
@@ -241,16 +260,13 @@ img {
 		background: rgba($primary, 0.8);
 		padding: 1em;
 		border-radius: 6px;
-		width: 100%;
-		margin-left: -70%;
+		margin-left: -20px;
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
 
 		.logo_bug {
-			width: 80px;
-			height: auto;
-			margin-right: 1em;
+			display: none;
 		}
 
 		p {
@@ -428,6 +444,9 @@ HEADER STYLES
 	background-color: $secondary;
 	height: 80vh;
 	min-height: 500px;
+	background-repeat:  no-repeat;
+	background-size:cover; 
+	background-position: center;
 }
 
 #logo {
@@ -440,9 +459,9 @@ HEADER STYLES
 
 .logo {
 	img {
-		width: 60%;
+		width: 50%;
 		height: auto;
-		margin-top: 2em;
+		margin-top: 1em;
 		margin-bottom: 2em;
 	}
 	&-full {
@@ -465,15 +484,26 @@ and more scalable.
 
 */
 
+.home {
+	#mobile-nav {
+		color: rgba($primary, .9);
+	}
+}
+
 #mobile-nav {
 	text-align: center;
 	transition: all .5s;
-	padding: 1em;
+	padding: .5em 1em;
+	position: absolute;
+	right: 0;
+	color: rgba($white, .9);
+	font-weight: 500;
+	text-transform: lowercase;
 
 	&.show {
 		margin-top: 0em;
-		padding: .5em;
-		background-color: white;
+		padding: .5em 1em;
+		color: rgba($primary, .9);
 
 		.fa-chevron-down {
 			transform: rotate(180deg);
@@ -482,7 +512,9 @@ and more scalable.
 }
 
 .header-nav {
-	background-color: $white;
+	background-color: rgba($white, .9);
+	position: absolute;
+	width: 100%;
 
 	&__nav {
 		display: flex;
@@ -505,8 +537,10 @@ and more scalable.
 	}
 
 	.logo_bug {
-			max-width: 40px;
-			height: auto;
+		position: absolute;
+		top: 5px;
+		max-width: 40px;
+		height: auto;
 	}
 }
 
@@ -605,6 +639,8 @@ and more scalable.
 		height: 30px;
 		background-color: $background;
 		padding-bottom: 0;
+		padding-right: 0;
+		margin-right: 0;
 		margin-bottom: 0;
 	}
 }
@@ -615,8 +651,8 @@ and more scalable.
 	position: relative;
 	width: 30px;
 	height: 30px;
+	padding-right: 0;
 	float: right;
-	margin-right: -20px;
 	color: $primary;
 }
 
@@ -1331,24 +1367,26 @@ FOOTER STYLES
 	color: $light-gray;
 }
 
-	/*
-	if you checked out the link above:
-	http://www.alistapart.com/articles/organizing-mobile/
-	you'll want to style the footer nav
-	a bit more in-depth. Remember to keep
-	it simple because you'll have to
-	override these styles for the desktop
-	view.
-	*/
-	.footer-links {
 
-		ul {
+.footer-links {
+	.nav {
+		display: flex;
+	}
+	ul {
 
-			li {}
-
+		li {
+			a {
+				color: $white;
+				
+				&:hover {
+					color: rgba($white, .6);
+				}
+			}
 		}
 
-	} /* end .footer-links */
+	}
+
+}
 
 
 	.copyright {}

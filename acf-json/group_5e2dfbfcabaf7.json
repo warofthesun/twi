@@ -1,11 +1,11 @@
 {
-    "key": "group_5e1a0713bbd58",
-    "title": "Post Page Options",
+    "key": "group_5e2dfbfcabaf7",
+    "title": "Events Page Options",
     "fields": [
         {
-            "key": "field_5e1a076261414",
+            "key": "field_5e2dfbfcafb45",
             "label": "Page Title",
-            "name": "post_page_title",
+            "name": "events_page_title",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -22,20 +22,44 @@
             "maxlength": ""
         },
         {
-            "key": "field_5e1a073f61413",
+            "key": "field_5e2dfbfcafbc9",
             "label": "Header Image",
-            "name": "post_header_image",
+            "name": "events_header_image",
             "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "70",
                 "class": "",
                 "id": ""
             },
             "return_format": "url",
             "preview_size": "large",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5e2e3c4b282bf",
+            "label": "Headshot",
+            "name": "headshot_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -55,7 +79,7 @@
             }
         ]
     ],
-    "menu_order": 2,
+    "menu_order": 1,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -63,5 +87,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1580071904
+    "modified": 1580089117
 }

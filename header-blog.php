@@ -1,15 +1,12 @@
 <!doctype html>
 <!-- header blog -->
 <?php include 'head.php'; ?>
-
 		<div id="container">
 			<div class="header-nav">
 				<div class="header-nav__container wrap row">
 					<div class="header-nav__nav">
 						<?php if( have_rows('primary_site_logos', 'option') ): ?>
 							<?php while( have_rows('primary_site_logos', 'option') ): the_row();
-
-									// Get sub field values.
 									$image = get_sub_field('primary_logo_bug');
 
 									// vars
@@ -31,17 +28,17 @@
 					<?php endif; ?>
 						<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 							<?php wp_nav_menu(array(
-												 'container' => false,                           // remove nav container
-												 'container_class' => 'menu ',                 // class of container (should you choose to use it)
-												 'menu' => __( 'The Main Menu', 'startertheme' ),  // nav name
-												 'menu_class' => 'nav top-nav',               // adding custom nav class
-												 'theme_location' => 'main-nav',                 // where it's located in the theme
-												 'before' => '',                                 // before the menu
-															 'after' => '',                                  // after the menu
-															 'link_before' => '',                            // before each link
-															 'link_after' => '',                             // after each link
-															 'depth' => 0,                                   // limit the depth of the nav
-												 'fallback_cb' => ''                             // fallback function (if there is one)
+								 'container' => false,                           // remove nav container
+								 'container_class' => 'menu ',                 // class of container (should you choose to use it)
+								 'menu' => __( 'The Main Menu', 'startertheme' ),  // nav name
+								 'menu_class' => 'nav top-nav',               // adding custom nav class
+								 'theme_location' => 'main-nav',                 // where it's located in the theme
+								 'before' => '',                                 // before the menu
+											 'after' => '',                                  // after the menu
+											 'link_before' => '',                            // before each link
+											 'link_after' => '',                             // after each link
+											 'depth' => 0,                                   // limit the depth of the nav
+								 'fallback_cb' => ''                             // fallback function (if there is one)
 							)); ?>
 						</nav>
 					</div>
@@ -77,7 +74,7 @@
 				Menu <i class="fas fa-chevron-down"></i>
 			</div>
 			<?php if (is_single() || is_page()) {} else { ?>
-			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader" style="background: url('<?php the_field('post_header_image', 'option'); ?>') no-repeat; background-size:cover; ">
+			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader" style="background-image: url('<?php the_field('post_header_image', 'option'); ?>'); ">
 				<div class="overlay">
 					<div id="inner-header" class="wrap row">
 

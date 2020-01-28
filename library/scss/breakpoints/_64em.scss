@@ -16,10 +16,6 @@ LAYOUT & GRID STYLES
 	width: 760px;
 }
 
-.homepage__hero-text {
-	width: 50%;
-}
-
 .homepage__speaking_headshot {
 	margin-left: -3em;
 }
@@ -35,11 +31,24 @@ LAYOUT & GRID STYLES
 	min-height: 580px;
 }
 
-.header-nav__nav {
-	width: auto;
-
-	nav {
+.header-nav {
+	position: relative;
+	
+	.logo_bug {
+		position: relative;
+		top: 0px;
+	}
+	
+	&__search {
+		display: inline-block;
+	}
+	
+	&__nav {
 		width: auto;
+	
+		nav {
+			width: auto;
+		}
 	}
 }
 
@@ -82,6 +91,16 @@ LAYOUT & GRID STYLES
 	}
 }
 
+.innerpage__hero-text {
+	margin-left: -70%;
+}
+
+.events-archive {
+	.innerpage__hero-text {
+		margin-left: -30%;
+	}
+}
+
 
 /*********************
 HEADER STYLES
@@ -94,6 +113,21 @@ HEADER STYLES
 /*********************
 NAVIGATION STYLES
 *********************/
+
+#mobile-nav {
+	display: none;
+}
+
+.nav {
+	flex-direction: row;
+	height: auto;
+	opacity: 1;
+	display: flex;
+
+	li {
+		border-bottom: 0;
+	}
+}
 
 .nav {
 	border: 0;
@@ -109,10 +143,6 @@ NAVIGATION STYLES
 		a {
 			border-bottom: 0;
 
-			/*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/
 			&:hover, &:focus {
 				color: $secondary;
 				text-decoration: none;
@@ -122,9 +152,6 @@ NAVIGATION STYLES
 		&:first-child {}
 		&:last-child {}
 
-		/*
-		plan your menus and drop-downs wisely.
-		*/
 		ul.sub-menu,
 		ul.children {
 			margin-top: 0;
@@ -158,18 +185,12 @@ NAVIGATION STYLES
 					}
 				}
 
-				/*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/
 				ul {
 					top:0;
 					left:100%;
 				}
 			}
 
-			/* highlight sub-menu current page */
 			li.current-menu-item,
 			li.current_page_item,
 			li.current_page_ancestor {
@@ -177,7 +198,6 @@ NAVIGATION STYLES
 			}
 		}
 
-		/* showing sub-menus */
 		&:hover > ul {
 			top: auto;
 			visibility:visible;
@@ -193,10 +213,6 @@ NAVIGATION STYLES
 	}  /* end current highlighters */
 
 } /* end .nav */
-
-.header-nav__search {
-	display: inline-block;
-}
 
 /*********************
 SIDEBARS & ASIDES

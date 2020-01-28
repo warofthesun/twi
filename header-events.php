@@ -1,6 +1,6 @@
 <!doctype html>
+<!-- header blog -->
 <?php include 'head.php'; ?>
-
 		<div id="container">
 			<div class="header-nav">
 				<div class="header-nav__container wrap row">
@@ -42,17 +42,10 @@
 							)); ?>
 						</nav>
 					</div>
+					<span class="search_and_social">
 					<div class="header-nav__search">
 						<?php include "searchform.php"; ?>
 					</div>
-				</div>
-			</div>
-			<div id="mobile-nav">
-				Menu <i class="fas fa-chevron-down"></i>
-			</div>
-			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader" style="background-image: url('<?php $image = get_field('header_image'); echo $image; ?>');">
-				<?php the_field('page_title'); ?>
-				<div id="inner-header" class="wrap row">
 					<div class="social social__group social__group_right">
 						<?php
 							// check if the repeater field has rows of data
@@ -74,11 +67,27 @@
 
 						 <?php  endwhile; else : endif; ?>
 					</div>
-					<div class="homepage homepage__hero-text">
-						<?php the_field('homepage_header_text'); ?>
+					</span>
+				</div>
+			</div>
+			<div id="mobile-nav">
+				Menu <i class="fas fa-chevron-down"></i>
+			</div>
+			<?php if (is_single() || is_page()) {} else { ?>
+			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader" style="background-image: url('<?php the_field('events_header_image', 'option'); ?>'); ">
+				<div class="overlay">
+					<div id="inner-header" class="wrap row">
+
+					<div class="innerpage">
+						<h1 class="innerpage__hero-text">
+							
+							<p>
+								<?php the_field('events_page_title', 'option'); ?>
+							</p>
+						</h1>
 					</div>
 
 				</div>
-
-
+				</div>
 			</header>
+			<?php } ?>

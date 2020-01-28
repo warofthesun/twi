@@ -138,25 +138,39 @@ BOX SIZING
 /* @include box-sizing(border-box); */
 /* NOTE: value of "padding-box" is only supported in Gecko. So
 probably best not to use it. I mean, were you going to anyway? */
+.home .header {
+  height: 80vh;
+  background-position-y: top; }
+
+.header {
+  background-color: #804098;
+  height: 70vh;
+  min-height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+.homepage__hero-text {
+  width: 50%; }
+
+.homepage__services .services__container .service {
+  padding-bottom: 30%; }
+
+.homepage__contact .contact_form span {
+  max-width: 100%; }
+
+.innerpage__hero-text {
+  margin-left: -50%;
+  width: 100%; }
+  .innerpage__hero-text .logo_bug {
+    display: block;
+    width: 80px;
+    height: auto;
+    margin-right: 1em; }
+
 /*********************
 NAVIGATION STYLES
 *********************/
-#mobile-nav {
-  display: none; }
-
-.nav {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  height: auto;
-  opacity: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-  .nav li {
-    border-bottom: 0; }
-
 /* .menu is clearfixed inside mixins.scss */
 .menu {
   /* end .menu ul */ }
@@ -165,15 +179,7 @@ NAVIGATION STYLES
     /* highlight current page */
     /* end current highlighters */ }
     .menu ul li {
-      text-align: left;
-      /*
-				plan your menus and drop-downs wisely.
-				*/ }
-      .menu ul li a {
-        /*
-					you can use hover styles here even though this size
-					has the possibility of being a mobile device.
-					*/ }
+      text-align: left; }
 
 /* end .menu */
 /*********************
@@ -217,9 +223,6 @@ LAYOUT & GRID STYLES
 .wrap {
   width: 760px; }
 
-.homepage__hero-text {
-  width: 50%; }
-
 .homepage__speaking_headshot {
   margin-left: -3em; }
 
@@ -230,10 +233,17 @@ LAYOUT & GRID STYLES
 .header {
   min-height: 580px; }
 
-.header-nav__nav {
-  width: auto; }
-  .header-nav__nav nav {
+.header-nav {
+  position: relative; }
+  .header-nav .logo_bug {
+    position: relative;
+    top: 0px; }
+  .header-nav__search {
+    display: inline-block; }
+  .header-nav__nav {
     width: auto; }
+    .header-nav__nav nav {
+      width: auto; }
 
 .homepage__services .services__container .service {
   padding-bottom: 30%; }
@@ -259,12 +269,34 @@ LAYOUT & GRID STYLES
   .social__group_right {
     text-align: right; }
 
+.innerpage__hero-text {
+  margin-left: -70%; }
+
+.events-archive .innerpage__hero-text {
+  margin-left: -30%; }
+
 /*********************
 HEADER STYLES
 *********************/
 /*********************
 NAVIGATION STYLES
 *********************/
+#mobile-nav {
+  display: none; }
+
+.nav {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: auto;
+  opacity: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .nav li {
+    border-bottom: 0; }
+
 .nav {
   border: 0;
   /* end .menu ul li */
@@ -273,58 +305,38 @@ NAVIGATION STYLES
   .nav ul {
     background: #000;
     margin-top: 0; }
-  .nav li {
-    /*
-		plan your menus and drop-downs wisely.
-		*/
-    /* showing sub-menus */ }
-    .nav li a {
-      border-bottom: 0;
-      /*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/ }
-      .nav li a:hover, .nav li a:focus {
-        color: #804098;
-        text-decoration: none; }
-    .nav li ul.sub-menu,
-    .nav li ul.children {
-      margin-top: 0;
-      border: 1px solid #ccc;
-      border-top: 0;
-      position: absolute;
-      visibility: hidden;
-      z-index: 8999;
-      /* highlight sub-menu current page */ }
-      .nav li ul.sub-menu li,
-      .nav li ul.children li {
-        /*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/ }
-        .nav li ul.sub-menu li a,
-        .nav li ul.children li a {
-          padding-left: 10px;
-          border-right: 0;
-          display: block;
-          width: 180px;
-          border-bottom: 1px solid #ccc; }
-        .nav li ul.sub-menu li:last-child a,
-        .nav li ul.children li:last-child a {
-          border-bottom: 0; }
-        .nav li ul.sub-menu li ul,
-        .nav li ul.children li ul {
-          top: 0;
-          left: 100%; }
-    .nav li:hover > ul {
-      top: auto;
-      visibility: visible; }
+  .nav li a {
+    border-bottom: 0; }
+    .nav li a:hover, .nav li a:focus {
+      color: #804098;
+      text-decoration: none; }
+  .nav li ul.sub-menu,
+  .nav li ul.children {
+    margin-top: 0;
+    border: 1px solid #ccc;
+    border-top: 0;
+    position: absolute;
+    visibility: hidden;
+    z-index: 8999; }
+    .nav li ul.sub-menu li a,
+    .nav li ul.children li a {
+      padding-left: 10px;
+      border-right: 0;
+      display: block;
+      width: 180px;
+      border-bottom: 1px solid #ccc; }
+    .nav li ul.sub-menu li:last-child a,
+    .nav li ul.children li:last-child a {
+      border-bottom: 0; }
+    .nav li ul.sub-menu li ul,
+    .nav li ul.children li ul {
+      top: 0;
+      left: 100%; }
+  .nav li:hover > ul {
+    top: auto;
+    visibility: visible; }
 
 /* end .nav */
-.header-nav__search {
-  display: inline-block; }
-
 /*********************
 SIDEBARS & ASIDES
 *********************/

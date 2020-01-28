@@ -78,12 +78,12 @@
 									<?php endwhile; endif; ?>
 								</div>
 							</section>
-							<?php
-								$args = array(
-								'posts_per_page' => 1,
-								'post_type' => 'tribe_events',
-								);
-								$the_query = new WP_Query( $args );
+								<?php
+									$args = array(
+									'posts_per_page' => 1,
+									'post_type' => 'tribe_events',
+									);
+									$the_query = new WP_Query( $args );
 								?>
 								<?php if ( $the_query->have_posts() ) : ?>
 							<section id="upcoming-event" class="homepage__upcoming-event">
@@ -196,13 +196,14 @@
 									</div>
 									</span>
 								</div>
-								<div class="col-xs-2 col-sm-0"></div>
-								<div class="col-cs-10 col-sm-6">
-									<?php
-										$contact = get_sub_field('contact_form');
-
-										echo do_shortcode($contact);
-									?>
+								<div class="col-xs-12 col-sm-6 contact_form">
+									<span>
+										<?php
+											$contact = get_sub_field('contact_form');
+	
+											echo do_shortcode($contact);
+										?>
+									</span>
 							</div>
 							<?php endwhile; ?>
 						</section>

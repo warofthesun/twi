@@ -1725,6 +1725,12 @@ img {
           justify-content: flex-start;
   height: 100%; }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  #inner-header {
+    display: block; }
+    #inner-header .social__group_right {
+      width: 100%; } }
+
 #inner-footer .nav {
   opacity: 1;
   -webkit-box-orient: horizontal;
@@ -1747,10 +1753,11 @@ img {
 
 .homepage__hero-text {
   font-size: 3em;
+  margin-top: 10%;
   color: #fff;
   line-height: 1.2;
   max-width: 100%;
-  text-shadow: 0px 0px 5px rgba(128, 64, 152, 0.5), 0px 0px 20px rgba(18, 27, 67, 0.3); }
+  text-shadow: 0px 0px 5px rgba(18, 27, 67, 0.3), 0px 0px 20px rgba(18, 27, 67, 0.2); }
 
 .homepage__speaking {
   display: block;
@@ -1887,6 +1894,10 @@ img {
       max-width: 300px; }
     .homepage__contact .contact_content .title {
       color: #273b94; }
+  .homepage__contact .contact_form span {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto; }
 
 .innerpage {
   display: -webkit-box;
@@ -1901,8 +1912,7 @@ img {
     background: rgba(39, 59, 148, 0.8);
     padding: 1em;
     border-radius: 6px;
-    width: 100%;
-    margin-left: -70%;
+    margin-left: -20px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1913,9 +1923,7 @@ img {
         -ms-flex-align: center;
             align-items: center; }
     .innerpage__hero-text .logo_bug {
-      width: 80px;
-      height: auto;
-      margin-right: 1em; }
+      display: none; }
     .innerpage__hero-text p {
       margin: 0;
       padding: 0;
@@ -2051,7 +2059,10 @@ HEADER STYLES
 .header {
   background-color: #804098;
   height: 80vh;
-  min-height: 500px; }
+  min-height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
 
 #logo {
   margin: 0.75em 0; }
@@ -2059,9 +2070,9 @@ HEADER STYLES
     color: #fff; }
 
 .logo img {
-  width: 60%;
+  width: 50%;
   height: auto;
-  margin-top: 2em;
+  margin-top: 1em;
   margin-bottom: 2em; }
 
 .logo-full__hero {
@@ -2078,21 +2089,31 @@ the navs on the site so our css is cleaner
 and more scalable.
 
 */
+.home #mobile-nav {
+  color: rgba(39, 59, 148, 0.9); }
+
 #mobile-nav {
   text-align: center;
   -webkit-transition: all .5s;
   transition: all .5s;
-  padding: 1em; }
+  padding: .5em 1em;
+  position: absolute;
+  right: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  text-transform: lowercase; }
   #mobile-nav.show {
     margin-top: 0em;
-    padding: .5em;
-    background-color: white; }
+    padding: .5em 1em;
+    color: rgba(39, 59, 148, 0.9); }
     #mobile-nav.show .fa-chevron-down {
       -webkit-transform: rotate(180deg);
               transform: rotate(180deg); }
 
 .header-nav {
-  background-color: #fff; }
+  background-color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  width: 100%; }
   .header-nav__nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2114,6 +2135,8 @@ and more scalable.
         -ms-flex-align: center;
             align-items: center; }
   .header-nav .logo_bug {
+    position: absolute;
+    top: 5px;
     max-width: 40px;
     height: auto; }
 
@@ -2176,6 +2199,8 @@ and more scalable.
     height: 30px;
     background-color: #edf0ff;
     padding-bottom: 0;
+    padding-right: 0;
+    margin-right: 0;
     margin-bottom: 0; }
 
 #searchsubmit {
@@ -2184,8 +2209,8 @@ and more scalable.
   position: relative;
   width: 30px;
   height: 30px;
+  padding-right: 0;
   float: right;
-  margin-right: -20px;
   color: #273b94; }
 
 .search_and_social {
@@ -2587,37 +2612,47 @@ FOOTER STYLES
   background-color: #000;
   color: #f8f9fa; }
 
-/*
-	if you checked out the link above:
-	http://www.alistapart.com/articles/organizing-mobile/
-	you'll want to style the footer nav
-	a bit more in-depth. Remember to keep
-	it simple because you'll have to
-	override these styles for the desktop
-	view.
-	*/
-/* end .footer-links */
+.footer-links .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.footer-links ul li a {
+  color: #fff; }
+  .footer-links ul li a:hover {
+    color: rgba(255, 255, 255, 0.6); }
+
 /*********************
 LARGER MOBILE DEVICES
 *********************/
 @media only screen and (min-width: 48em) {
+  .home .header {
+    height: 80vh;
+    background-position-y: top; }
+  .header {
+    background-color: #804098;
+    height: 70vh;
+    min-height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; }
+  .homepage__hero-text {
+    width: 50%; }
+  .homepage__services .services__container .service {
+    padding-bottom: 30%; }
+  .homepage__contact .contact_form span {
+    max-width: 100%; }
+  .innerpage__hero-text {
+    margin-left: -50%;
+    width: 100%; }
+    .innerpage__hero-text .logo_bug {
+      display: block;
+      width: 80px;
+      height: auto;
+      margin-right: 1em; }
   /*********************
 NAVIGATION STYLES
 *********************/
-  #mobile-nav {
-    display: none; }
-  .nav {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    height: auto;
-    opacity: 1;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-    .nav li {
-      border-bottom: 0; }
   /* .menu is clearfixed inside mixins.scss */
   .menu {
     /* end .menu ul */ }
@@ -2626,15 +2661,7 @@ NAVIGATION STYLES
       /* highlight current page */
       /* end current highlighters */ }
       .menu ul li {
-        text-align: left;
-        /*
-				plan your menus and drop-downs wisely.
-				*/ }
-        .menu ul li a {
-          /*
-					you can use hover styles here even though this size
-					has the possibility of being a mobile device.
-					*/ }
+        text-align: left; }
   /* end .menu */
   /*********************
 POSTS & CONTENT STYLES
@@ -2679,8 +2706,6 @@ LAYOUT & GRID STYLES
     display: none; }
   .wrap {
     width: 760px; }
-  .homepage__hero-text {
-    width: 50%; }
   .homepage__speaking_headshot {
     margin-left: -3em; }
   .homepage__hero-text {
@@ -2688,10 +2713,17 @@ LAYOUT & GRID STYLES
     font-size: 3.5em; }
   .header {
     min-height: 580px; }
-  .header-nav__nav {
-    width: auto; }
-    .header-nav__nav nav {
+  .header-nav {
+    position: relative; }
+    .header-nav .logo_bug {
+      position: relative;
+      top: 0px; }
+    .header-nav__search {
+      display: inline-block; }
+    .header-nav__nav {
       width: auto; }
+      .header-nav__nav nav {
+        width: auto; }
   .homepage__services .services__container .service {
     padding-bottom: 30%; }
   .logo img {
@@ -2712,12 +2744,30 @@ LAYOUT & GRID STYLES
         margin-right: 0; }
     .social__group_right {
       text-align: right; }
+  .innerpage__hero-text {
+    margin-left: -70%; }
+  .events-archive .innerpage__hero-text {
+    margin-left: -30%; }
   /*********************
 HEADER STYLES
 *********************/
   /*********************
 NAVIGATION STYLES
 *********************/
+  #mobile-nav {
+    display: none; }
+  .nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: auto;
+    opacity: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .nav li {
+      border-bottom: 0; }
   .nav {
     border: 0;
     /* end .menu ul li */
@@ -2726,56 +2776,37 @@ NAVIGATION STYLES
     .nav ul {
       background: #000;
       margin-top: 0; }
-    .nav li {
-      /*
-		plan your menus and drop-downs wisely.
-		*/
-      /* showing sub-menus */ }
-      .nav li a {
-        border-bottom: 0;
-        /*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/ }
-        .nav li a:hover, .nav li a:focus {
-          color: #804098;
-          text-decoration: none; }
-      .nav li ul.sub-menu,
-      .nav li ul.children {
-        margin-top: 0;
-        border: 1px solid #ccc;
-        border-top: 0;
-        position: absolute;
-        visibility: hidden;
-        z-index: 8999;
-        /* highlight sub-menu current page */ }
-        .nav li ul.sub-menu li,
-        .nav li ul.children li {
-          /*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
-				*/ }
-          .nav li ul.sub-menu li a,
-          .nav li ul.children li a {
-            padding-left: 10px;
-            border-right: 0;
-            display: block;
-            width: 180px;
-            border-bottom: 1px solid #ccc; }
-          .nav li ul.sub-menu li:last-child a,
-          .nav li ul.children li:last-child a {
-            border-bottom: 0; }
-          .nav li ul.sub-menu li ul,
-          .nav li ul.children li ul {
-            top: 0;
-            left: 100%; }
-      .nav li:hover > ul {
-        top: auto;
-        visibility: visible; }
+    .nav li a {
+      border-bottom: 0; }
+      .nav li a:hover, .nav li a:focus {
+        color: #804098;
+        text-decoration: none; }
+    .nav li ul.sub-menu,
+    .nav li ul.children {
+      margin-top: 0;
+      border: 1px solid #ccc;
+      border-top: 0;
+      position: absolute;
+      visibility: hidden;
+      z-index: 8999; }
+      .nav li ul.sub-menu li a,
+      .nav li ul.children li a {
+        padding-left: 10px;
+        border-right: 0;
+        display: block;
+        width: 180px;
+        border-bottom: 1px solid #ccc; }
+      .nav li ul.sub-menu li:last-child a,
+      .nav li ul.children li:last-child a {
+        border-bottom: 0; }
+      .nav li ul.sub-menu li ul,
+      .nav li ul.children li ul {
+        top: 0;
+        left: 100%; }
+    .nav li:hover > ul {
+      top: auto;
+      visibility: visible; }
   /* end .nav */
-  .header-nav__search {
-    display: inline-block; }
   /*********************
 SIDEBARS & ASIDES
 *********************/

@@ -146,7 +146,6 @@ img {
 	}
 
 	&__services {
-		border-bottom: 2px solid $secondary;
 
 		.services {
 			&__container {
@@ -204,7 +203,12 @@ img {
 
 	&__latest-news {
 		background: $white;
+		border-top: 2px solid $secondary;
 		padding: 3em 0;
+		
+		.latest-news__title {
+			color: $primary;
+		}
 
 		.featured_image {
 			img {
@@ -254,6 +258,7 @@ img {
 	display: flex;
 	align-items: center;
 	height: 100%;
+	position: relative;
 
 	&__hero-text {
 		display: inline-block;
@@ -317,6 +322,59 @@ img {
 		}
 	}
 }
+
+.post-type-archive-tribe_events {
+	.header {
+		height: 50vh;
+		min-height: 500px;
+	}
+	
+	.events-page {
+		&_headshot {
+			position: absolute;
+			bottom: -30px;
+			left: -80px;
+		}
+	}
+	
+	.hentry {
+		background-color: transparent;
+	}
+}
+
+.events {
+	.tribe-events-page-title {
+		font-weight: 300;
+	}
+	
+	#tribe-bar-form {
+		background-color: transparent;
+	}
+	
+	.tribe-events-list-separator-month {
+		span {
+			background-color: $background;
+			text-transform: lowercase;
+			font-weight: 400;
+		}
+	}
+	
+	#tribe-events .tribe-events-button {
+		background-color: $secondary;
+	}
+	
+	.hentry footer {
+		padding: 0;
+	}
+	
+	#tribe-bar-form label {
+		color: $secondary;
+	}
+}
+
+.single-tribe_events .tribe-events-event-meta {
+		background: $background !important;
+	}
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -411,13 +469,14 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 h1, .h1 {
 	font-size: 2.5em;
 	line-height: 1.333em;
-	font-weight: 200;
+	font-weight: 300;
 }
 
 h2, .h2 {
 	font-size: 1.75em;
 	line-height: 1.4em;
 	margin-bottom: 0.375em;
+	font-weight: 400;
 }
 
 h3, .h3 {
@@ -723,7 +782,6 @@ article {
 
 			footer {
 				padding: 1.5em;
-				border-top: 1px solid $light-gray;
 
 				p {
 					margin: 0;

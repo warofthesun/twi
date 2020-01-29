@@ -48,7 +48,7 @@
         {
             "key": "field_5e2e3c4b282bf",
             "label": "Headshot",
-            "name": "headshot_image",
+            "name": "events_page_headshot_image",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -58,7 +58,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "id",
+            "return_format": "array",
             "preview_size": "thumbnail",
             "library": "all",
             "min_width": "",
@@ -87,5 +87,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1580089117
+    "modified": 1580178495
 }

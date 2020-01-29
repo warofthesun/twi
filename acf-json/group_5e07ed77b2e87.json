@@ -430,6 +430,25 @@
                     "maxlength": ""
                 }
             ]
+        },
+        {
+            "key": "field_5e30f1565f8f9",
+            "label": "Latest News Section Title",
+            "name": "latest_news_section_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -449,5 +468,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1580071823
+    "modified": 1580265838
 }

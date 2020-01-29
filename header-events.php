@@ -1,31 +1,28 @@
 <!doctype html>
-<!-- header blog -->
+<!-- header events -->
 <?php include 'head.php'; ?>
-		<div id="container">
+		<div id="container" class="events">
 			<div class="header-nav">
 				<div class="header-nav__container wrap row">
 					<div class="header-nav__nav">
 						<?php if( have_rows('primary_site_logos', 'option') ): ?>
 							<?php while( have_rows('primary_site_logos', 'option') ): the_row();
 									$image = get_sub_field('primary_logo_bug');
-
 									// vars
 									$url = $image['url'];
 									$title = $image['title'];
 									$alt = $image['alt'];
 									$caption = $image['caption'];
-
 									// thumbnail
 									$size = 'medium';
 									$thumb = $image['sizes'][ $size ];
 									$width = $image['sizes'][ $size . '-width' ];
 									$height = $image['sizes'][ $size . '-height' ]; ?>
-
 									<a href="<?php echo home_url(); ?>" rel="nofollow">
 										<img class="logo_bug" src="<?php echo $thumb; ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>"/>
 									</a>
 							<?php endwhile; ?>
-					<?php endif; ?>
+						<?php endif; ?>	
 						<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 							<?php wp_nav_menu(array(
 								 'container' => false,                           // remove nav container
@@ -43,30 +40,22 @@
 						</nav>
 					</div>
 					<span class="search_and_social">
-					<div class="header-nav__search">
-						<?php include "searchform.php"; ?>
-					</div>
-					<div class="social social__group social__group_right">
-						<?php
-							// check if the repeater field has rows of data
-							if( have_rows('social_platforms', 'option') ):
-
-							// loop through the rows of data
-								while ( have_rows('social_platforms', 'option') ) : the_row();
-
-
-								$link = get_sub_field('social_platform_link');
-								$link_url = $link['url'];
-								$link_title = $link['title'];
-								$link_target = $link['target'] ? $link['target'] : '_self';
-						?>
-
-							<a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target );?>" title="<?php echo esc_html( $link_title ); ?>">
-								<?php the_sub_field('social_platform_icon'); ?>
-							</a>
-
-						 <?php  endwhile; else : endif; ?>
-					</div>
+						<div class="header-nav__search">
+							<?php include "searchform.php"; ?>
+						</div>
+						<div class="social social__group social__group_right">
+								<?php
+								if( have_rows('social_platforms', 'option') ): while ( have_rows('social_platforms', 'option') ) : the_row();
+									$link = get_sub_field('social_platform_link');
+									$link_url = $link['url'];
+									$link_title = $link['title'];
+									$link_target = $link['target'] ? $link['target'] : '_self';
+								?>
+								<a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target );?>" title="<?php echo esc_html( $link_title ); ?>">
+									<?php the_sub_field('social_platform_icon'); ?>
+								</a>
+								<?php  endwhile; else : endif; ?>
+						</div>
 					</span>
 				</div>
 			</div>
@@ -77,16 +66,30 @@
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader" style="background-image: url('<?php the_field('events_header_image', 'option'); ?>'); ">
 				<div class="overlay">
 					<div id="inner-header" class="wrap row">
-
 					<div class="innerpage">
 						<h1 class="innerpage__hero-text">
-							
 							<p>
 								<?php the_field('events_page_title', 'option'); ?>
 							</p>
 						</h1>
+						<?php if( get_field('events_page_headshot_image', 'option') ): ?>
+						<div class="events-page_headshot">
+							<?php
+							$image = get_field('events_page_headshot_image', 'option');
+							// vars
+							$url = $image['url'];
+							$title = $image['title'];
+							$alt = $image['alt'];
+							$caption = $image['caption'];
+							// thumbnail
+							$size = 'square';
+							$thumb = $image['sizes'][ $size ];
+							$width = $image['sizes'][ $size . '-width' ];
+							$height = $image['sizes'][ $size . '-height' ]; ?>
+								<img src="<?php echo $thumb; ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>"/>
+						</div>
+						<?php endif; ?>	
 					</div>
-
 				</div>
 				</div>
 			</header>

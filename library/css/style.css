@@ -1354,7 +1354,7 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.accent-btn, .comment-reply-link, #submit, .primary-btn, .secondary-btn, .wpcf7-submit {
+.accent-btn, .comment-reply-link, #submit, .primary-btn, .secondary-btn, .wpcf7-submit, #tribe-bar-form .tribe-bar-submit input[type="submit"], .tribe-events-read-more {
   display: inline-block;
   position: relative;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1370,11 +1370,11 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   cursor: pointer;
   -webkit-transition: background-color 0.14s ease-in-out;
   transition: background-color 0.14s ease-in-out; }
-  .accent-btn:hover, .comment-reply-link:hover, #submit:hover, .primary-btn:hover, .secondary-btn:hover, .wpcf7-submit:hover, .accent-btn:focus, .comment-reply-link:focus, #submit:focus, .primary-btn:focus, .secondary-btn:focus, .wpcf7-submit:focus, .accent-btn:visited, .comment-reply-link:visited, #submit:visited, .primary-btn:visited, .secondary-btn:visited, .wpcf7-submit:visited {
+  .accent-btn:hover, .comment-reply-link:hover, #submit:hover, .primary-btn:hover, .secondary-btn:hover, .wpcf7-submit:hover, #tribe-bar-form .tribe-bar-submit input:hover[type="submit"], .tribe-events-read-more:hover, .accent-btn:focus, .comment-reply-link:focus, #submit:focus, .primary-btn:focus, .secondary-btn:focus, .wpcf7-submit:focus, #tribe-bar-form .tribe-bar-submit input:focus[type="submit"], .tribe-events-read-more:focus, .accent-btn:visited, .comment-reply-link:visited, #submit:visited, .primary-btn:visited, .secondary-btn:visited, .wpcf7-submit:visited, #tribe-bar-form .tribe-bar-submit input:visited[type="submit"], .tribe-events-read-more:visited {
     color: #fff;
     text-decoration: none;
     outline: none; }
-  .accent-btn:active, .comment-reply-link:active, #submit:active, .primary-btn:active, .secondary-btn:active, .wpcf7-submit:active {
+  .accent-btn:active, .comment-reply-link:active, #submit:active, .primary-btn:active, .secondary-btn:active, .wpcf7-submit:active, #tribe-bar-form .tribe-bar-submit input:active[type="submit"], .tribe-events-read-more:active {
     top: 1px; }
 
 .accent-btn, .comment-reply-link, #submit {
@@ -1392,12 +1392,12 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   .primary-btn:active {
     background-color: #223380; }
 
-.secondary-btn, .wpcf7-submit {
+.secondary-btn, .wpcf7-submit, #tribe-bar-form .tribe-bar-submit input[type="submit"], .tribe-events-read-more {
   background-color: #804098; }
-  .secondary-btn:hover, .secondary-btn:focus, .wpcf7-submit:hover, .wpcf7-submit:focus {
+  .secondary-btn:hover, .secondary-btn:focus, .wpcf7-submit:hover, .wpcf7-submit:focus, #tribe-bar-form .tribe-bar-submit input[type="submit"]:hover, #tribe-bar-form .tribe-bar-submit input[type="submit"]:focus, .tribe-events-read-more:hover, .tribe-events-read-more:focus {
     background-color: #743a8a;
     color: rgba(255, 255, 255, 0.8) !important; }
-  .secondary-btn:active, .wpcf7-submit:active {
+  .secondary-btn:active, .wpcf7-submit:active, #tribe-bar-form .tribe-bar-submit input[type="submit"]:active, .tribe-events-read-more:active {
     background-color: #713886; }
 
 /******************************************************************
@@ -1814,58 +1814,59 @@ img {
     width: 100%;
     height: auto; }
 
-.homepage__services {
-  border-bottom: 2px solid #804098; }
-  .homepage__services .services__container {
-    margin-bottom: 3em; }
-    .homepage__services .services__container .service {
-      background-size: cover;
-      padding-bottom: 70%;
-      border: 0.5em solid #edf0ff;
-      position: relative;
-      margin-bottom: 4em; }
-      .homepage__services .services__container .service .service_content {
-        background-color: rgba(39, 59, 148, 0);
-        height: 100%;
-        width: 100%;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-        -webkit-box-align: end;
-            -ms-flex-align: end;
-                align-items: flex-end;
-        position: absolute;
-        margin-left: 0;
-        left: 0;
-        color: #fff;
-        -webkit-transition: all .3s;
-        transition: all .3s; }
-        .homepage__services .services__container .service .service_content:hover {
-          background-color: rgba(39, 59, 148, 0.5); }
-        .homepage__services .services__container .service .service_content .button {
-          display: block;
-          min-width: 130px;
-          background-color: #273b94;
-          text-align: center;
-          border-radius: 20px;
-          padding: .3em;
-          margin-bottom: 2em; }
-      .homepage__services .services__container .service .service_title {
-        width: 100%;
+.homepage__services .services__container {
+  margin-bottom: 3em; }
+  .homepage__services .services__container .service {
+    background-size: cover;
+    padding-bottom: 70%;
+    border: 0.5em solid #edf0ff;
+    position: relative;
+    margin-bottom: 4em; }
+    .homepage__services .services__container .service .service_content {
+      background-color: rgba(39, 59, 148, 0);
+      height: 100%;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: end;
+          -ms-flex-align: end;
+              align-items: flex-end;
+      position: absolute;
+      margin-left: 0;
+      left: 0;
+      color: #fff;
+      -webkit-transition: all .3s;
+      transition: all .3s; }
+      .homepage__services .services__container .service .service_content:hover {
+        background-color: rgba(39, 59, 148, 0.5); }
+      .homepage__services .services__container .service .service_content .button {
+        display: block;
+        min-width: 130px;
+        background-color: #273b94;
         text-align: center;
-        bottom: -50px;
-        position: absolute;
-        color: #273b94;
-        text-transform: lowercase;
-        font-weight: 500;
-        font-size: 1.4em; }
+        border-radius: 20px;
+        padding: .3em;
+        margin-bottom: 2em; }
+    .homepage__services .services__container .service .service_title {
+      width: 100%;
+      text-align: center;
+      bottom: -50px;
+      position: absolute;
+      color: #273b94;
+      text-transform: lowercase;
+      font-weight: 500;
+      font-size: 1.4em; }
 
 .homepage__latest-news {
   background: #fff;
+  border-top: 2px solid #804098;
   padding: 3em 0; }
+  .homepage__latest-news .latest-news__title {
+    color: #273b94; }
   .homepage__latest-news .featured_image img {
     width: 100%;
     height: auto; }
@@ -1906,7 +1907,8 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100%; }
+  height: 100%;
+  position: relative; }
   .innerpage__hero-text {
     display: inline-block;
     background: rgba(39, 59, 148, 0.8);
@@ -1955,6 +1957,41 @@ img {
       right: 100%; }
     .header__divider > span:after {
       left: 100%; }
+
+.post-type-archive-tribe_events .header {
+  height: 50vh;
+  min-height: 500px; }
+
+.post-type-archive-tribe_events .events-page_headshot {
+  position: absolute;
+  bottom: -30px;
+  left: -80px; }
+
+.post-type-archive-tribe_events .hentry {
+  background-color: transparent; }
+
+.events .tribe-events-page-title {
+  font-weight: 300; }
+
+.events #tribe-bar-form {
+  background-color: transparent; }
+
+.events .tribe-events-list-separator-month span {
+  background-color: #edf0ff;
+  text-transform: lowercase;
+  font-weight: 400; }
+
+.events #tribe-events .tribe-events-button {
+  background-color: #804098; }
+
+.events .hentry footer {
+  padding: 0; }
+
+.events #tribe-bar-form label {
+  color: #804098; }
+
+.single-tribe_events .tribe-events-event-meta {
+  background: #edf0ff !important; }
 
 /********************
 WORDPRESS BODY CLASSES
@@ -2033,12 +2070,13 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 h1, .h1 {
   font-size: 2.5em;
   line-height: 1.333em;
-  font-weight: 200; }
+  font-weight: 300; }
 
 h2, .h2 {
   font-size: 1.75em;
   line-height: 1.4em;
-  margin-bottom: 0.375em; }
+  margin-bottom: 0.375em;
+  font-weight: 400; }
 
 h3, .h3 {
   font-size: 1.125em; }
@@ -2260,8 +2298,7 @@ article .hero--image img {
     border-bottom: 1px solid #f8f9fa;
     padding: 1.5em; }
   .hentry footer {
-    padding: 1.5em;
-    border-top: 1px solid #f8f9fa; }
+    padding: 1.5em; }
     .hentry footer p {
       margin: 0; }
 
@@ -2747,7 +2784,8 @@ LAYOUT & GRID STYLES
   .innerpage__hero-text {
     margin-left: -70%; }
   .events-archive .innerpage__hero-text {
-    margin-left: -30%; }
+    margin-left: -85%;
+    width: 165%; }
   /*********************
 HEADER STYLES
 *********************/

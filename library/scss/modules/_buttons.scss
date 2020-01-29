@@ -83,7 +83,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 
 } // end primary button
 
-.secondary-btn, .wpcf7-submit {
+.secondary-btn, .wpcf7-submit, #tribe-bar-form .tribe-bar-submit input[type="submit"], .tribe-events-read-more  {
   @extend %btn; // here we load the btn defaults
   background-color: $secondary;
 

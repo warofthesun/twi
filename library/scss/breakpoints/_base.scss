@@ -599,11 +599,15 @@ and more scalable.
 	color: rgba($white, .9);
 	font-weight: 500;
 	text-transform: lowercase;
+	background-color: rgba($primary, .7);
+	border-radius: 0 0 0 4px;
+
 
 	&.show {
 		margin-top: 0em;
 		padding: .5em 1em;
 		color: rgba($primary, .9);
+		background-color: transparent;
 
 		.fa-chevron-down {
 			transform: rotate(180deg);

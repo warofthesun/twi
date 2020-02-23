@@ -12,7 +12,7 @@
 	height: 70vh;
 	min-height: 500px;
 	background-repeat:  no-repeat;
-	background-size:cover; 
+	background-size:cover;
 	background-position: center;
 }
 
@@ -39,7 +39,28 @@
 	}
 }
 
+.post-type-archive-tribe_events {
+	.header {
+	}
 
+	.events-page {
+		&_headshot {
+			width: 300px;
+			position: absolute;
+			right: 0px;
+			display: inline-block;
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+
+.page-title {
+	text-align: left;
+}
 
 /*********************
 NAVIGATION STYLES

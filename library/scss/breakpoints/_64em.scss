@@ -33,19 +33,19 @@ LAYOUT & GRID STYLES
 
 .header-nav {
 	position: relative;
-	
+
 	.logo_bug {
 		position: relative;
 		top: 0px;
 	}
-	
+
 	&__search {
-		display: inline-block;
+		
 	}
-	
+
 	&__nav {
 		width: auto;
-	
+
 		nav {
 			width: auto;
 		}
@@ -103,6 +103,21 @@ LAYOUT & GRID STYLES
 }
 
 
+.post-type-archive-tribe_events {
+	.header {
+	}
+
+	.events-page {
+		&_headshot {
+			width: 400px;
+			position: absolute;
+			left: -30%;
+			display: inline-block;
+		}
+	}
+}
+
+
 /*********************
 HEADER STYLES
 *********************/
@@ -110,6 +125,7 @@ HEADER STYLES
 .header {}
 
 	#logo {}
+
 
 /*********************
 NAVIGATION STYLES
@@ -224,7 +240,7 @@ SIDEBARS & ASIDES
 }
 
 	.widgettitle {
-		border-bottom: 2px solid #444;
+		border-bottom: 1px solid $meta-gray;
 		margin-bottom: 0.75em;
 	}
 

@@ -2,3 +2,22 @@
 .wrap {
   width: 1040px;
 }
+
+.post-type-archive-tribe_events {
+	.header {
+	}
+
+	.events-page {
+		&_headshot {
+			width: 500px;
+			position: absolute;
+			bottom: -30px;
+			left: -80px;
+			display: inline-block;
+		}
+	}
+}
+
+.header-nav__search {
+  display: inline-block;
+}

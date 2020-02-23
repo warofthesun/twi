@@ -52,6 +52,38 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 
 } // end .button
 
+%imgbtn {
+  display: inline-block;
+  position: absolute;
+  font-family: $sans-serif;
+  text-decoration: none;
+  color: $white;
+  font-size: 1em;
+  font-weight: normal;
+  padding: .5em 1em;
+  border-radius: 30px;
+  border: 1px solid;
+  width: 120px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  text-align: center;
+  cursor: pointer;
+  @include transition(background-color 0.14s ease-in-out);
+
+  &:hover, &:focus, &:visited {
+    color: $white;
+    text-decoration: none;
+    outline: none;
+  }
+
+  &:active {
+    top: 1px; // adds a tiny hop to the click
+  }
+
+} // end .button
+
 .accent-btn {
   @extend %btn; // here we load the btn defaults
   background-color: $accent;
@@ -83,7 +115,23 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 
 } // end primary button
 
-.secondary-btn, .wpcf7-submit, #tribe-bar-form .tribe-bar-submit input[type="submit"], .tribe-events-read-more  {
+.primary-btn_img {
+  @extend %imgbtn; // here we load the btn defaults
+  background-color: $primary;
+
+  &:hover,
+  &:focus {
+    background-color: darken($primary, 4%);
+    color: rgba($white, 0.8) !important;
+  } // end hover
+
+  &:active {
+    background-color: darken($primary, 5%);
+  } // end active
+
+} // end primary button
+
+.secondary-btn, .wpcf7-submit, #tribe-bar-form .tribe-bar-submit input[type="submit"], .tribe-events-read-more, .tribe-events-list-widget .tribe-events-widget-link a  {
   @extend %btn; // here we load the btn defaults
   background-color: $secondary;
 

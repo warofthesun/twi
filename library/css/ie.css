@@ -168,6 +168,18 @@ probably best not to use it. I mean, were you going to anyway? */
     height: auto;
     margin-right: 1em; }
 
+.post-type-archive-tribe_events .events-page_headshot {
+  width: 300px;
+  position: absolute;
+  right: 0px;
+  display: inline-block; }
+  .post-type-archive-tribe_events .events-page_headshot img {
+    width: 100%;
+    height: auto; }
+
+.page-title {
+  text-align: left; }
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -238,8 +250,6 @@ LAYOUT & GRID STYLES
   .header-nav .logo_bug {
     position: relative;
     top: 0px; }
-  .header-nav__search {
-    display: inline-block; }
   .header-nav__nav {
     width: auto; }
     .header-nav__nav nav {
@@ -275,6 +285,12 @@ LAYOUT & GRID STYLES
 .events-archive .innerpage__hero-text {
   margin-left: -85%;
   width: 165%; }
+
+.post-type-archive-tribe_events .events-page_headshot {
+  width: 400px;
+  position: absolute;
+  left: -30%;
+  display: inline-block; }
 
 /*********************
 HEADER STYLES
@@ -345,7 +361,7 @@ SIDEBARS & ASIDES
   /* margin-top: 2.2em; */ }
 
 .widgettitle {
-  border-bottom: 2px solid #444;
+  border-bottom: 1px solid #9fa6b4;
   margin-bottom: 0.75em; }
 
 .widget {
@@ -387,6 +403,16 @@ mobile. Make sure to double check these!
 /* end .footer-links */
 .wrap {
   width: 1040px; }
+
+.post-type-archive-tribe_events .events-page_headshot {
+  width: 500px;
+  position: absolute;
+  bottom: -30px;
+  left: -80px;
+  display: inline-block; }
+
+.header-nav__search {
+  display: inline-block; }
 
 /*
 you can call the larger styles if you want, but there's really no need
